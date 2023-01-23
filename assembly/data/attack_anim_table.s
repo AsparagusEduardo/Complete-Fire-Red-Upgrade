@@ -42,7 +42,6 @@ attack_anim_table.s
 
 .global gMoveAnimations
 gMoveAnimations:
-.word Move_THUNDERPUNCH
 .word Move_WINGATTACK
 .word Move_DOUBLEEDGE
 .word Move_FLAMETHROWER
@@ -756,7 +755,7 @@ Move_CLAMP:
 	launchtemplate CLAMP_SHELL_LEFT ANIMSPRITE_IS_TARGET | 3, 0x6 0xffd7 0x0 0x2 0x333 0x0 0xa
 	launchtemplate CLAMP_SHELL_RIGHT ANIMSPRITE_IS_TARGET | 3, 0x6 0x20 0x0 0x6 0xfccd 0x0 0xa
 	delay 0xa
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x2
 	launchtask AnimTask_ShakeMon 0x5 0x5 0x1 0x3 0x0 0x5 0x1
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
@@ -854,20 +853,20 @@ Move_WINGATTACK:
 	setalpha 12, 8
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x3 0x0 10 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4, 0, 10 ANIM_TARGET 0x2  
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4, 0, 10 ANIM_TARGET 0x2  
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4, 0, 0 ANIM_TARGET 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4, 0, 0 ANIM_TARGET 0x2
 	call WING_ATTACK_SCATTER_FEATHERS
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 4, 0x4, 0, -10 ANIM_TARGET 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 4, 0x4, 0, -10 ANIM_TARGET 0x2
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 5, 0x4, 0, -20 ANIM_TARGET 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 5, 0x4, 0, -20 ANIM_TARGET 0x2
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 6, 0x4, 0, -30 ANIM_TARGET 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 6, 0x4, 0, -30 ANIM_TARGET 0x2
 	waitforvisualfinish
 	blendoff 
 	end
@@ -914,20 +913,20 @@ Move_STEELWING:
 	waitforvisualfinish
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x3 0x0 10 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4, -30, 10 ANIM_TARGET 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4, -30, 10 ANIM_TARGET 0x1
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4, -15, 0 ANIM_TARGET 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4, -15, 0 ANIM_TARGET 0x1
 	call WING_ATTACK_SCATTER_FEATHERS
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 4, 0x4, 0, -10 ANIM_TARGET 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 4, 0x4, 0, -10 ANIM_TARGET 0x1
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 5, 0x4, 15, -20 ANIM_TARGET 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 5, 0x4, 15, -20 ANIM_TARGET 0x1
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 6, 0x4, 30, -30 ANIM_TARGET 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 6, 0x4, 30, -30 ANIM_TARGET 0x1
 	waitforvisualfinish 
 	end
 
@@ -1002,7 +1001,7 @@ Move_MACHPUNCH:
 	launchtemplate MACH_PUNCH_FIST ANIMSPRITE_IS_TARGET | 4, 0x5, ANIM_TARGET, 0, 0, 12, 0
 	delay 0x6
 	playsewithpan SE_M_COMET_PUNCH SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4 0x0 0x0 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4 0x0 0x0 0x1 0x1
 	launchtask AnimTask_ShakeMon 0x2 0x5 0x1 0x3 0x0 0x6 0x1
 	waitforvisualfinish
 	clearmonbg side_attacker
@@ -1905,31 +1904,31 @@ Move_BULLETPUNCH:
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x3 0x0 0x15 0x1
 @Right
 	playsewithpan SE_M_VITAL_THROW2 SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0xA 0x0 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0xA 0x0 0x1 0x1
 	delay 0x1
 	launchtemplate BULLET_FIST ANIMSPRITE_IS_TARGET | 3, 0x5 0xA 0x0 0x8 0x1 0x0
 	delay 0x2
 @Low Left
 	playsewithpan SE_M_VITAL_THROW2 SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0xFFF0 0x10 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0xFFF0 0x10 0x1 0x1
 	delay 0x1
 	launchtemplate BULLET_FIST ANIMSPRITE_IS_TARGET | 3, 0x5 0xFFF0 0x10 0x8 0x1 0x0
 	delay 0x2
 @Down
 	playsewithpan SE_M_VITAL_THROW2 SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x5 0x10 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x5 0x10 0x1 0x1
 	delay 0x1
 	launchtemplate BULLET_FIST ANIMSPRITE_IS_TARGET | 3, 0x5 0x5 0x10 0x8 0x1 0x0
 	delay 0x2
 @Up
 	playsewithpan SE_M_VITAL_THROW2 SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x5 0xFFF5 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x5 0xFFF5 0x1 0x1
 	delay 0x1
 	launchtemplate BULLET_FIST ANIMSPRITE_IS_TARGET | 3, 0x5 0x5 0xFFF5 0x8 0x1 0x0
 	delay 0x2
 @Top Left
 	playsewithpan SE_M_VITAL_THROW2 SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0xFFF5 0xFFF7 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0xFFF5 0xFFF7 0x1 0x1
 	delay 0x1
 	launchtemplate BULLET_FIST ANIMSPRITE_IS_TARGET | 3, 0x5 0xFFF5 0xFFF7 0x8 0x1 0x0
 	delay 0x2
@@ -2532,7 +2531,7 @@ Move_GRASSKNOT:
 	launchtemplate gSlideMonToOffsetSpriteTemplate 0x2 0x5 ANIM_ATTACKER 0x14 0x0 0x0 0x4
 	launchtemplate KNOT ANIMSPRITE_IS_TARGET | 2, 0x6 0xffe8 0x13 0x28 0x8 0xa0 0x0
 	delay 0x4
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4, 0xfff8 0x8 0x1 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4, 0xfff8 0x8 0x1 0x2
 	launchtask AnimTask_RotateMonSpriteToSide 0x2 0x4 0x6 0x180 ANIM_TARGET 0x2
 	playsewithpan SE_M_RAZOR_WIND SOUND_PAN_TARGET
 	waitforvisualfinish
@@ -4465,15 +4464,15 @@ FLAME_BUFF:
 
 FLARE_BLITZ_HITS:
 	loopsewithpan 0x86 SOUND_PAN_TARGET 0x2 0x5
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 0, 0x4,  21,   0, ANIM_TARGET 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 0, 0x4,  21,   0, ANIM_TARGET 0x0
 	delay 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 1, 0x4,   0,  21, ANIM_TARGET 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 1, 0x4,   0,  21, ANIM_TARGET 0x0
 	delay 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4,  -6, -16, ANIM_TARGET 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4,  -6, -16, ANIM_TARGET 0x0
 	delay 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4, -16,  16, ANIM_TARGET 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4, -16,  16, ANIM_TARGET 0x0
 	delay 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 4, 0x4,   0,   0, ANIM_TARGET 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 4, 0x4,   0,   0, ANIM_TARGET 0x0
 	delay 0x2
 	return
 
@@ -4626,11 +4625,11 @@ Move_ACROBATICS:
 	playsewithpan SE_M_JUMP_KICK SOUND_PAN_ATTACKER
 	delay 0x4
 	playsewithpan SE_M_VITAL_THROW2 SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 4, 0x4, 0x0 0xFFFA 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 4, 0x4, 0x0 0xFFFA 0x1 0x1
 	launchtask AnimTask_ShakeMon 0x2 0x5 0x1 0x5 0x0 0x6 0x1
 	delay 0x8
 	playsewithpan SE_M_VITAL_THROW2 SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 4, 0x4, 0x3 0xA 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 4, 0x4, 0x3 0xA 0x1 0x1
 	launchtask AnimTask_ShakeMon 0x2 0x5 0x1 0x5 0x0 0x6 0x1
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
@@ -5101,7 +5100,7 @@ Move_WAKEUPSLAP:
 
 WAKE_UP_SLAP_HIT:
 	playsewithpan SE_M_DOUBLE_SLAP SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 1, 0x4, 0x0 0x0 ANIM_TARGET 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 1, 0x4, 0x0 0x0 ANIM_TARGET 0x1
 	launchtemplate WAKE_UP_SLAP_STARS ANIMSPRITE_IS_TARGET | 2, 0x4 0xfff0 0xfff8 0xa0 0xffe0
 	launchtemplate WAKE_UP_SLAP_STARS ANIMSPRITE_IS_TARGET | 2, 0x4 0xfff0 0xfff8 0xff00 0xffd8
 	launchtemplate WAKE_UP_SLAP_STARS ANIMSPRITE_IS_TARGET | 2, 0x4 0xfff0 0xfff8 0x1a0 0xffda
@@ -5163,7 +5162,7 @@ Move_SUCKERPUNCH:
 	launchtemplate gSlideMonToOffsetSpriteTemplate 0x2 0x5 ANIM_ATTACKER 0x14 0x0 0x0 0x4
 	launchtemplate SUCKER_PUNCH ANIMSPRITE_IS_TARGET | 2, 0x6 0xffe8 0x5 0x28 0x8 0xa0 0x0
 	delay 0x4
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4, 0x0 0x0 0x1 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4, 0x0 0x0 0x1 0x2
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x3 0x9 0x1
 	playsewithpan SE_M_COMET_PUNCH SOUND_PAN_TARGET
 	waitforvisualfinish
@@ -5408,7 +5407,7 @@ Move_DRAININGKISS:
 	launchtemplate 0x83e4368 ANIMSPRITE_IS_TARGET | 2, 0x2 0x0 0xffe8
 	waitforvisualfinish
 	playsewithpan SE_M_ATTRACT SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
 	launchtask AnimTask_ShakeMon 0x5 0x5 0x1 0x0 0x5 0x5 0x1
 	call ABSORB_ANIM
 	waitforvisualfinish
@@ -6223,7 +6222,7 @@ Move_FEINT:
 	waitforvisualfinish
 	launchtemplate FEINT_HIT_FIST ANIMSPRITE_IS_TARGET | 3, 0x5, ANIM_TARGET, 0, 0, 20, 0x0
 	delay 10
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4, 0x0 0x0 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4, 0x0 0x0 0x1 0x1
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x3 0x0 0x6 0x1
 	playsewithpan SE_M_COMET_PUNCH SOUND_PAN_TARGET
 	waitforvisualfinish
@@ -6964,7 +6963,7 @@ Move_CHIPAWAY:
 	launchtask AnimTask_TranslateMonEllipticalRespectSide 0x2 0x5 ANIM_ATTACKER 0x18 0x6 0x1 0x5
 	delay 0x4
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x5 0x0 0x6 0x1
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 4, 0x4, 0x0 0x0 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 4, 0x4, 0x0 0x0 0x1 0x1
 	playsewithpan SE_M_VITAL_THROW2 SOUND_PAN_TARGET
 	waitforvisualfinish
 	clearmonbg side_attacker
@@ -10764,7 +10763,7 @@ Move_ACCELEROCK:
 	playsewithpan SE_M_JUMP_KICK SOUND_PAN_ATTACKER
 	delay 0x4
 	launchtask AnimTask_ShakeMon 0x2 0x5 0x1 0x5 0x0 0x6 0x1
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 4, 0x4, 0x0 0x0 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 4, 0x4, 0x0 0x0 0x1 0x1
 	playsewithpan SE_M_VITAL_THROW2 SOUND_PAN_TARGET
 	launchtemplate Template_RockFragment ANIMSPRITE_IS_TARGET | 2, 0x6 0x5 0x0 0xffec 0x18 0xe 0x1
 	launchtemplate Template_RockFragment ANIMSPRITE_IS_TARGET | 2, 0x6 0x0 0x5 0x14 0xffe8 0xe 0x2
@@ -15183,8 +15182,8 @@ PFISTS_STRIKE:
 	playsewithpan SE_M_COMET_PUNCH SOUND_PAN_TARGET
 	launchtemplate gFistFootSpriteTemplate ANIMSPRITE_IS_TARGET | 4, 0x5, -20 0x0 0x8 0x1 0x0
 	launchtemplate gFistFootSpriteTemplate ANIMSPRITE_IS_TARGET | 4, 0x5, 20 0x0 0x8 0x1 0x0
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4, -20 0x0 0x1 0x1
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4, 20 0x0 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4, -20 0x0 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4, 20 0x0 0x1 0x1
 	delay 0x1
 	launchtask AnimTask_InvertScreenColor 0x2 0x3 0x101 0x101 0x101
 	delay 0x1
@@ -15202,8 +15201,8 @@ PFISTS_STRIKE:
 	launchtask AnimTask_InvertScreenColor 0x2 0x3 0x101 0x101 0x101
 	delay 0x2
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x3 0xf 0x1
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4, -20 0x0 0x1 0x0
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4, 20 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4, -20 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4, 20 0x0 0x1 0x0
 	return
 
 .align 2
@@ -15752,7 +15751,7 @@ SKYDROP_SECOND_TURN:
 	launchtemplate Template_BounceBallLand 0x83 0x0
 	delay 0x7
 	playsewithpan SE_M_MEGA_KICK2 SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4, 0x0 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4, 0x0 0x0 0x1 0x0
 	launchtask AnimTask_ShakeMon 0x5 0x5 0x1 0x0 0x5 0xb 0x1
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
@@ -16421,23 +16420,23 @@ Move_DRUM_BEATING:
 	launchtemplate Template_FrenzyPlantRoot ANIMSPRITE_IS_TARGET | 2, 0x6 100 0xfff0 0x10 0x0 0x2 0x4b 
 	playsewithpan SE_M_SCRATCH SOUND_PAN_TARGET 
 	delay 0x5 
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0xfff6 0xfff6 0x1 0x3 
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0xfff6 0xfff6 0x1 0x3 
 	playsewithpan SE_M_DOUBLE_SLAP SOUND_PAN_TARGET 
 	launchtask AnimTask_ShakeMon 0x3 0x5 ANIM_TARGET 0x8 0x0 0x14 0x1
 	delay 0x3 
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0xa 0x8 0x1 0x3 
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0xa 0x8 0x1 0x3 
 	playsewithpan SE_M_DOUBLE_SLAP SOUND_PAN_TARGET 
 	delay 0x3 
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0xa 0xfffd 0x1 0x2 
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0xa 0xfffd 0x1 0x2 
 	playsewithpan SE_M_DOUBLE_SLAP SOUND_PAN_TARGET 
 	delay 0x3 
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0xfffd 0x1 0x1 0x2 
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0xfffd 0x1 0x1 0x2 
 	playsewithpan SE_M_DOUBLE_SLAP SOUND_PAN_TARGET 
 	delay 0x2 
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0xfff6 0x1 0x1 0x1 
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0xfff6 0x1 0x1 0x1 
 	playsewithpan SE_M_DOUBLE_SLAP SOUND_PAN_TARGET 
 	delay 0x2 
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0xa 0x1 0x1 
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0xa 0x1 0x1 
 	playsewithpan SE_M_DOUBLE_SLAP SOUND_PAN_TARGET 
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET 
@@ -17952,7 +17951,7 @@ Move_TRIPLE_AXEL:
 
 TRIPLE_AXEL_0:
 	launchtemplate gFistFootSpriteTemplate ANIMSPRITE_IS_TARGET | 4, 0x5 0xfff0 0xfff8 0x14 0x1 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4 0xfff0 0xfff0 0x1 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4 0xfff0 0xfff0 0x1 0x2
 	launchtemplate TRIPLE_AXEL_ICE ANIMSPRITE_IS_TARGET | 1, 0x4 0xfff0 0xfff8 0xff00 0xffd8
 	launchtemplate TRIPLE_AXEL_ICE ANIMSPRITE_IS_TARGET | 1, 0x4 0xfff0 0xfff8 0x1a0 0xffda
 	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_TARGET 0x4 0x0 0x4 0x1
@@ -17960,7 +17959,7 @@ TRIPLE_AXEL_0:
 
 TRIPLE_AXEL_1:
 	launchtemplate gFistFootSpriteTemplate ANIMSPRITE_IS_TARGET | 4, 0x5 0x8 0x8 0x14 0x1 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4 0x8 0x0 0x1 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4 0x8 0x0 0x1 0x2
 	launchtemplate TRIPLE_AXEL_ICE ANIMSPRITE_IS_TARGET | 1, 0x4 0x8 0x8 0xa0 0xffe0
 	launchtemplate TRIPLE_AXEL_ICE ANIMSPRITE_IS_TARGET | 1, 0x4 0x8 0x8 0xff00 0xffd8
 	launchtemplate TRIPLE_AXEL_ICE ANIMSPRITE_IS_TARGET | 1, 0x4 0x8 0x8 0x1a0 0xffda
@@ -17970,7 +17969,7 @@ TRIPLE_AXEL_1:
 
 TRIPLE_AXEL_2:
 	launchtemplate gFistFootSpriteTemplate ANIMSPRITE_IS_TARGET | 4, 0x5 0x0 0x0 0x14 0x1 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4 0x0 0xfff8 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4 0x0 0xfff8 0x1 0x1
 	launchtemplate TRIPLE_AXEL_ICE ANIMSPRITE_IS_TARGET | 1, 0x4 0x0 0x0 0xa0 0xffe0
 	launchtemplate TRIPLE_AXEL_ICE ANIMSPRITE_IS_TARGET | 1, 0x4 0x0 0x0 0xff00 0xffd8
 	launchtemplate TRIPLE_AXEL_ICE ANIMSPRITE_IS_TARGET | 1, 0x4 0x0 0x0 0x80 0xfff0
@@ -18002,39 +18001,39 @@ Move_DUAL_WINGBEAT:
 	jumpifmoveturn 1, DUAL_WINGBEAT_RIGHT
 
 DUAL_WINGBEAT_LEFT:
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4, -20, 10 ANIM_TARGET 0x2  
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4, -20, 10 ANIM_TARGET 0x2  
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4, -20, 0 ANIM_TARGET 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4, -20, 0 ANIM_TARGET 0x2
 	call DUAL_WINGBEAT_SCATTER_FEATHERS_LEFT
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 4, 0x4, -20, -10 ANIM_TARGET 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 4, 0x4, -20, -10 ANIM_TARGET 0x2
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 5, 0x4, -20, -20 ANIM_TARGET 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 5, 0x4, -20, -20 ANIM_TARGET 0x2
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 6, 0x4, -20, -30 ANIM_TARGET 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 6, 0x4, -20, -30 ANIM_TARGET 0x2
 	waitforvisualfinish
 	blendoff 
 	end
 
 DUAL_WINGBEAT_RIGHT:
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4, 10, 10 ANIM_TARGET 0x2  
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4, 10, 10 ANIM_TARGET 0x2  
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4, 10, 0 ANIM_TARGET 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4, 10, 0 ANIM_TARGET 0x2
 	call DUAL_WINGBEAT_SCATTER_FEATHERS_RIGHT
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 4, 0x4, 10, -10 ANIM_TARGET 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 4, 0x4, 10, -10 ANIM_TARGET 0x2
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 5, 0x4, 10, -20 ANIM_TARGET 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 5, 0x4, 10, -20 ANIM_TARGET 0x2
 	delay 0x1
 	playsewithpan SE_M_WING_ATTACK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 6, 0x4, 10, -30 ANIM_TARGET 0x2
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 6, 0x4, 10, -30 ANIM_TARGET 0x2
 	waitforvisualfinish
 	blendoff 
 	end
@@ -18148,7 +18147,7 @@ Move_WICKED_BLOW:
 	launchtemplate WICKED_BLOW_FIST ANIMSPRITE_IS_TARGET | 4, 0x5 ANIM_TARGET 0 0 16 32
 	delay 6
 	loopsewithpan 207 SOUND_PAN_TARGET 0x4 0x6
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4 0x0 0x0 0x1 0x1
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4 0x0 0x0 0x1 0x1
 	launchtemplate WICKED_BLOW_STARS_BLACK ANIMSPRITE_IS_TARGET | 2, 0x4 0xfff0 0xfff8 0xfe80 0xffe1
 	launchtemplate WICKED_BLOW_STARS_RED ANIMSPRITE_IS_TARGET | 2, 0x4 0xfff0 0xfff8 0xff00 0xffd8
 	launchtemplate WICKED_BLOW_STARS_BLACK ANIMSPRITE_IS_TARGET | 2, 0x4 0xfff0 0xfff8 0xff80 0xffea
@@ -19574,48 +19573,48 @@ Move_ALL_OUT_PUMMELING:
 	launchtask AnimTask_ShakeMon 0x5 0x5 0x1 0x0 0x2 0x3F 0x1
 	launchtemplate PUMMEL_ONSLAUGHT ANIMSPRITE_IS_TARGET | 3, 0x8 0xffd0 0x18 0x0 0x0 0xa 0x1 OBJ_FOOT1 0x1
 	delay 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
 	playsewithpan SE_M_JUMP_KICK SOUND_PAN_TARGET
 	delay 0x8
 	launchtemplate PUMMEL_ONSLAUGHT ANIMSPRITE_IS_TARGET | 3, 0x8 0xfffa 0x12 0x0 0x0 0xa 0x1 OBJ_CHOP 0x1
 	delay 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
 	playsewithpan SE_M_JUMP_KICK SOUND_PAN_TARGET
 	delay 0x8
 	launchtemplate PUMMEL_ONSLAUGHT ANIMSPRITE_IS_TARGET | 3, 0x8 0xffc0 0x10 0x0 0x0 0xa 0x1 OBJ_FIST1 0x1
 	delay 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
 	playsewithpan SE_M_JUMP_KICK SOUND_PAN_TARGET
 	delay 0x8
 	launchtemplate PUMMEL_ONSLAUGHT ANIMSPRITE_IS_TARGET | 3, 0x8 0xffd0 0x15 0x0 0x0 0xa 0x1 OBJ_FOOT2 0x1
 	delay 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
 	playsewithpan SE_M_JUMP_KICK SOUND_PAN_TARGET
 	delay 0x8
 	launchtemplate PUMMEL_ONSLAUGHT ANIMSPRITE_IS_TARGET | 3, 0x8 0xffd0 0x14 0x0 0x0 0xa 0x1 OBJ_FIST1 0x1
 	delay 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
 	playsewithpan SE_M_JUMP_KICK SOUND_PAN_TARGET
 	delay 0x8
 	launchtemplate PUMMEL_ONSLAUGHT ANIMSPRITE_IS_TARGET | 3, 0x8 0xffe0 0x17 0x0 0x0 0xa 0x1 OBJ_CHOP 0x1
 	delay 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
 	playsewithpan SE_M_JUMP_KICK SOUND_PAN_TARGET
 	delay 0x8
 	launchtemplate PUMMEL_ONSLAUGHT ANIMSPRITE_IS_TARGET | 3, 0x8 0xffc0 0x11 0x0 0x0 0xa 0x1 OBJ_FOOT1 0x1
 	delay 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
 	playsewithpan SE_M_JUMP_KICK SOUND_PAN_TARGET
 	delay 0x8
 	launchtemplate PUMMEL_ONSLAUGHT ANIMSPRITE_IS_TARGET | 3, 0x8 0xffb0 0x10 0x0 0x0 0xa 0x1 OBJ_FOOT2 0x1
 	delay 0x2
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
 	playsewithpan SE_M_JUMP_KICK SOUND_PAN_TARGET
 	delay 0x8
 	launchtemplate PUMMEL_ONSLAUGHT ANIMSPRITE_IS_TARGET | 3, 0x8 0xffa0 0x15 0x0 0x0 0xa 0x1 OBJ_CHOP 0x1
 	delay 0x2
 	playsewithpan SE_M_JUMP_KICK SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
 	playsewithpan SE_M_VITAL_THROW2 SOUND_PAN_TARGET
 	delay 0x10
 	launchtask AnimTask_WindUpLunge 0x5 0x7 ANIM_ATTACKER 0xffe8 0x8 0x17 0xa 0x28 0xa
@@ -19685,7 +19684,7 @@ Move_SUPERSONIC_SKYSTRIKE:
 	playsewithpan SE_M_DOUBLE_TEAM SOUND_PAN_TARGET
 	launchtemplate FLY_STRIKE ANIMSPRITE_IS_TARGET | 3, 0x1 0x14
 	delay 0x10
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
 	playsewithpan SE_M_EXPLOSION SOUND_PAN_TARGET
 	launchtemplate gSlideMonToOffsetSpriteTemplate 0x2 0x5 ANIM_TARGET 0xff00 0x15 0x0 0x4
 	launchtemplate Template_DirtPlume ANIMSPRITE_IS_TARGET | 2, 0x6 ANIM_TARGET 0x0 0xc 0xffe8 0xfff0 0x18 	@ 12, -48, -16, 24
@@ -19850,7 +19849,7 @@ Move_TECTONIC_RAGE:
 	makebankinvisible ANIM_ATTACKER
 	delay 0x1
 	playsewithpan SE_M_EXPLOSION SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4 0x0 0x0 0x1 0x0
 	delay 0x1
 	launchtask AnimTask_FadeOutAllBanks 0xA 0x0
 	launchtemplate gSlideMonToOffsetSpriteTemplate 0x2 0x5 ANIM_TARGET 0xff00 0x15 0x0 0x4
@@ -20291,7 +20290,7 @@ AEROBLAST_STRINGSHOT:
 	return
 
 SPINOUT_SMASH_GROUND1:
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4, 0xfff6 0xfff8 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4, 0xfff6 0xfff8 0x1 0x0
 	playsewithpan SE_M_ROCK_THROW SOUND_PAN_TARGET
 	launchtemplate Template_DirtPlume ANIMSPRITE_IS_TARGET | 2, 0x6 0x1 0x0 0xc 0xffe8 0xfff0 0x18
 	launchtemplate Template_DirtPlume ANIMSPRITE_IS_TARGET | 2, 0x6 0x1 0x0 0x10 0xffda 0xfff6 0x18
@@ -20300,7 +20299,7 @@ SPINOUT_SMASH_GROUND1:
 	return
 
 SPINOUT_SMASH_GROUND2:
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4, 0xa 0xfff8 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4, 0xa 0xfff8 0x1 0x0
 	playsewithpan SE_M_ROCK_THROW SOUND_PAN_TARGET
 	launchtemplate Template_DirtPlume ANIMSPRITE_IS_TARGET | 2, 0x6 0x1 0x0 0xc 0xffd0 0xfff0 0x18
 	launchtemplate Template_DirtPlume ANIMSPRITE_IS_TARGET | 2, 0x6 0x1 0x0 0x10 0xfff0 0xfff6 0x18
@@ -20608,7 +20607,7 @@ FINISH_CORKSCREW:
 	delay 0x10
 	stopsound
 	playsewithpan SE_M_EXPLOSION SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 1, 0x4 0x0 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 1, 0x4 0x0 0x0 0x1 0x0
 	launchtemplate gSlideMonToOffsetSpriteTemplate 0x2 0x5 ANIM_TARGET 0xff00 0xf 0x0 0x4 @ shove target down a bit
 	waitforvisualfinish
 	launchtemplate gSlideMonToOriginalPosSpriteTemplate 0x2 0x3 ANIM_TARGET 0x0 0x10
@@ -23207,7 +23206,7 @@ CONTINUE_PULVERIZE:
 	launchtemplate Template_BounceBallLand ANIMSPRITE_IS_TARGET | 3, 0x0
 	delay 0x7
 	playsewithpan SE_M_EXPLOSION SOUND_PAN_TARGET
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x4, 0x0 0x0 0x1 0x0		@big hit marker
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 2, 0x4, 0x0 0x0 0x1 0x0		@big hit marker
 	delay 0x0
 	launchtask AnimTask_screen_shake 0x5 0x3 ANIM_TARGET 0x4 0x2c
 	launchtemplate PANCAKE_YELLOW_RING ANIMSPRITE_IS_TARGET | 3, 0x4 0x0 0x0 0x100 0x0
@@ -24599,11 +24598,11 @@ SNUGGLE_TEARS:
 	return
 
 SNUGGLE_HITS:
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4 0x0 0xfff4 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4 0x0 0xfff4 0x1 0x0
 	delay 0x8
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4 0xfff4 0x8 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4 0xfff4 0x8 0x1 0x0
 	delay 0x8
-	launchtemplate gBasicHitSplatSpriteTemplate ANIMSPRITE_IS_TARGET | 3, 0x4 0xc 0x0 0x1 0x0
+	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 3, 0x4 0xc 0x0 0x1 0x0
 	delay 0x8
 	return
 
