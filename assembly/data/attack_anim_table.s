@@ -827,7 +827,7 @@ Move_THUNDERPUNCH:
 	loadspritegfx ANIM_TAG_SPARK_2
 	monbg ANIM_TARGET
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0
 	waitforvisualfinish
 	playsewithpan SE_M_COMET_PUNCH SOUND_PAN_TARGET
 	launchtemplate Template_Fist 0x84 0x5 0x0 0x0 0x8 0x1 0x0
@@ -838,7 +838,7 @@ Move_THUNDERPUNCH:
 	call PARALYZE_CHANCE_ANIM
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x2 0x9 0x0 0x07FE
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
@@ -1019,14 +1019,14 @@ MACH_PUNCH_FIST: objtemplate ANIM_TAG_HANDS_AND_FEET ANIM_TAG_HANDS_AND_FEET OAM
 Move_RAINDANCE:
 	loadspritegfx ANIM_TAG_RAIN_DROPS
 	playsewithpan SE_M_RAIN_DANCE SOUND_PAN_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xD 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xD 0x0
 	waitforvisualfinish
 	launchtask AnimTask_CreateRaindrops 0x2 0x3 0x0 0x3 0x78
 	launchtask AnimTask_CreateRaindrops 0x2 0x3 0x0 0x3 0x78
 	delay 0x78
 	delay 0x1e
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xD 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xD 0x0 0x0
 	waitforvisualfinish
 	end
 
@@ -1230,7 +1230,7 @@ Move_BLASTBURN:
 	monbg ANIM_DEF_PARTNER
 	setalpha 12, 8
 	playsewithpan SE_M_SACRED_FIRE SOUND_PAN_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xA 0x043D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xA 0x043D
 	launchtemplate Template_FirePlume 0x2 0x6 0xffe0 0x0 0x18 0x0 0x0 0x0
 	launchtemplate Template_FirePlume 0x2 0x6 0xffec 0xfff6 0x18 0x0 0x0 0x0
 	launchtemplate Template_FirePlume 0x42 0x6 0x0 0xfff0 0x18 0x0 0x0 0x0
@@ -1264,7 +1264,7 @@ Move_BLASTBURN:
 	launchtask AnimTask_pal_fade_complex 0x2 0x6 ANIM_PAL_DEF 0x2 0x2 0x0 0xb 0x1f
 	call BURN_CHANCE_ANIM
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xA 0x0 0x043D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xA 0x0 0x043D
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
@@ -1465,7 +1465,7 @@ DRAGON_DANCE_SMOKE: objtemplate ANIM_TAG_PINK_CLOUD ANIM_TAG_HANDS_AND_FEET OAM_
 @Credits to Skeli
 Move_FLAMETHROWER:
 	loadspritegfx ANIM_TAG_SMALL_EMBER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x8 0x043D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x8 0x043D
 	delay 0x5
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
@@ -1493,7 +1493,7 @@ Move_FLAMETHROWER:
 	call FLAMETHROWER_FIRE
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | ANIM_PAL_DEF 0x1 0x8 0x0 0x043D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | ANIM_PAL_DEF 0x1 0x8 0x0 0x043D
 	end
 
 FLAMETHROWER_FIRE:
@@ -1602,13 +1602,13 @@ Move_LEECHFANG:
 	launchtemplate 0x83FEFBC ANIMSPRITE_IS_TARGET | 2, 0x0
 	delay 0xa
 	launchtask AnimTask_ShakeMon 0x3 0x5 ANIM_TARGET 0x3 0x0 0xa 0x1
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xA 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xA 0x0
 	call ABSORB_ANIM
 	waitforvisualfinish
 	delay 0xf
 	call 0x81D56C9 @HEALING_ANIM
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xA 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xA 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
@@ -1946,7 +1946,7 @@ Move_CHARGEBEAM:
 	loadspritegfx ANIM_TAG_ELECTRIC_ORBS
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
 	loadspritegfx ANIM_TAG_ORBS
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	launchtask AnimTask_ChargeBalls 0x2 0x4 ANIM_ATTACKER 0x14 0x0 0x2  @controls the flying electric particles
 	playsewithpan SE_M_CHARGE SOUND_PAN_ATTACKER
 	delay 0xc
@@ -1985,7 +1985,7 @@ Move_CHARGEBEAM:
 	call CHARGE_BEAM_TEMPLATE
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x2 0x9 0x0 0x07FE
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	end
 
@@ -2067,7 +2067,7 @@ Move_CROSSPOISON:
 .pool
 Move_DARKPULSE:
 	loadspritegfx ANIM_TAG_PURPLE_RING
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0
 	delay 0x4
 	call PLAY_DARK_PULSE_SOUND
 	call PURPLE_BEAM
@@ -2097,7 +2097,7 @@ Move_DARKPULSE:
 	call PURPLE_BEAM
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x2 0x9 0x0 0x3006
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0
 	waitforvisualfinish
 	end
 
@@ -2210,7 +2210,7 @@ Move_DRACOMETEOR:
 	loadspritegfx ANIM_TAG_FAIRY_LOCK_CHAINS @Gray Colour
 	loadspritegfx ANIM_TAG_WATER_GUN @Sparkles Trail
 	loadspritegfx ANIM_TAG_FIRE_PLUME @Eruption
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x2C41 @;Royal purple
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x2C41 @;Royal purple
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_WATER_GUN 0x0 0xA 0xA 0x680F @;Purple
 	waitforvisualfinish
 	playsewithpan SE_FALL SOUND_PAN_ATTACKER
@@ -2263,7 +2263,7 @@ Move_DRACOMETEOR:
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x2C41 @;Royal purple
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x2C41 @;Royal purple
 	waitforvisualfinish
 	end
 
@@ -2309,7 +2309,7 @@ DRACO_TAIL: objtemplate ANIM_TAG_WATER_GUN ANIM_TAG_WATER_GUN sDracoMeteorTailOA
 Move_DRAGONPULSE:
 	loadspritegfx ANIM_TAG_FLASH_CANNON_BALL
 	loadspritegfx ANIM_TAG_DRAGON_PULSE_RING
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x4 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x4 0x0
 	waitforvisualfinish
 	playsewithpan SE_M_PSYBEAM SOUND_PAN_ATTACKER
 	loopsewithpan 0x8A SOUND_PAN_TARGET 0xb 9
@@ -2332,7 +2332,7 @@ Move_DRAGONPULSE:
 	call DRAGON_PULSE_CALL
 	call DRAGON_PULSE_CALL
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x4 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x4 0x0 0x0
 	waitforvisualfinish
 	blendoff
 	end
@@ -2357,7 +2357,7 @@ Move_DRAINPUNCH:
 	loadspritegfx ANIM_TAG_VERTICAL_HEX
 	monbg ANIM_TARGET
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xA 0x171D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xA 0x171D
 	launchtemplate DRAIN_FIST ANIMSPRITE_IS_TARGET | 1, 0x5 ANIM_TARGET 0x0 0x0 16 0x2C
 	delay 2
 	playsewithpan SE_M_COMET_PUNCH SOUND_PAN_TARGET
@@ -2366,7 +2366,7 @@ Move_DRAINPUNCH:
 	launchtask AnimTask_ShakeMon 0x5 0x5 0x1 0x0 0x5 0x1A 0x1
 	call ABSORB_ANIM
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xa 0x0 0x171d
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xa 0x0 0x171d
 	call HEALING_ANIM
 	waitforvisualfinish
 	blendoff
@@ -2416,7 +2416,7 @@ EARTH_POWER_ERUPTION:
 Move_ENERGYBALL:
 	loadspritegfx ANIM_TAG_ENERGY_BALL
 	loadspritegfx ANIM_TAG_RAZOR_LEAF
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xD 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xD 0x0
 	waitforvisualfinish
 	launchsoundtask SoundTask_LoopSEAdjustPanning 0x7 0xa1, 0xFF00 | SOUND_PAN_ATTACKER, SOUND_PAN_TARGET 0x5 0x5 0x0 0x5
 	launchtemplate ENERGY_BALL ANIMSPRITE_IS_TARGET | 2, 0x3, 0x0 0x0 0x25
@@ -2425,7 +2425,7 @@ Move_ENERGYBALL:
 	launchtask AnimTask_ShakeMon_2 0x2 0x5 0x1 0x4 0x0 0x8 0x1
 	launchtask AnimTask_pal_fade_complex 0x2 0x6 ANIM_PAL_DEF 0x1 0x2 0x0 0xb 0x1FE1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xD 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xD 0x0 0x0
 	waitforvisualfinish
 	end
 
@@ -2855,7 +2855,7 @@ NIGHT_SLASH_RIGHT: objtemplate ANIM_TAG_CUT ANIM_TAG_CUT OAM_NORMAL_32x32 0x83E3
 .pool
 Move_OMINOUSWIND:
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x2 0x0 0xB 0x2c28
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x2c28
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x2c28
 	delay 0x10
 	launchtask AnimTask_LoadSandstormBackground 0x5 0x1 0x1
 	launchtask AnimTask_BlendBackground 0x6 0x2 0x6 0x2c28
@@ -2864,7 +2864,7 @@ Move_OMINOUSWIND:
 	launchtask AnimTask_ShakeMon_2 0x2 0x5 ANIM_TARGET 0x2 0x0 0x40 0x1
 	delay 90
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x3 0xB 0x0 0x2c28
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x2c28
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x2c28
 	waitforvisualfinish
 	end
 
@@ -2876,7 +2876,7 @@ Move_POWERGEM:
 	loadspritegfx ANIM_TAG_AIR_WAVE_2 @Gray Colour
 	monbg ANIM_DEF_PARTNER
 	leftopponentbankBG_over_partnerBG 0x1
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xD 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xD 0x0
 	waitforvisualfinish
 	launchtemplate POWERGEM_WHEEL 0x3 0x4 0x0 0x0 0x38 0x0
 	playsewithpan SE_SHINY SOUND_PAN_ATTACKER
@@ -2912,7 +2912,7 @@ Move_POWERGEM:
 	launchtemplate POWERGEM_BLADES 0x81 0x5 0x0 0xa 0x70 0xff80 0x28
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x3 0xf 0x1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xD 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xD 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	end
@@ -2935,7 +2935,7 @@ POWERGEM_BLADES: objtemplate ANIM_TAG_PUNISHMENT_BLADES ANIM_TAG_AIR_WAVE_2 OAM_
 .pool
 Move_POWERWHIP:
 	loadspritegfx ANIM_TAG_UNUSED_VINE_2 @Vine
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x02C0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x02C0
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x1 0x0 0x10 0x0
 	waitforvisualfinish
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x3 0x0 25 0x1
@@ -2945,7 +2945,7 @@ Move_POWERWHIP:
 	call POWER_WHIP
 	call POWER_WHIP
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x02C0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x02C0
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x1 0x10 0x0 0x0
 	waitforvisualfinish
 	end
@@ -3199,7 +3199,7 @@ Move_SHADOWSNEAK:
 	loadspritegfx ANIM_TAG_POISON_BUBBLE @Poison
 	loadspritegfx ANIM_TAG_HANDS_AND_FEET
 	monbg ANIM_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x7 0x0000
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x7 0x0000
 	waitforvisualfinish
 	playsewithpan SE_M_FAINT_ATTACK SOUND_PAN_ATTACKER
 	launchtask AnimTask_TranslateMonEllipticalRespectSide 0x2 0x5 ANIM_ATTACKER 0x12 0x6 0x1 0x3
@@ -3221,7 +3221,7 @@ Move_SHADOWSNEAK:
 	call SHADOWSNEAK_MOVE
 	waitforvisualfinish
 	makebankvisible ANIM_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x7 0x0 0x0000
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x7 0x0 0x0000
 	waitforvisualfinish
 	end
 
@@ -3284,7 +3284,7 @@ Move_ZENHEADBUTT:
 	loadspritegfx ANIM_TAG_IMPACT
 	setalpha 12, 8
 	monbg ANIM_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 	waitforvisualfinish
 	loopsewithpan 0xb1 SOUND_PAN_ATTACKER 0xa 0x3
 	launchtemplate ZEN_BLUECHARGE 0x2 0x0
@@ -3299,7 +3299,7 @@ Move_ZENHEADBUTT:
 	launchtemplate Template_FlashingHit 0x83 0x4 0x0 0x0 0x1 0x1
 	playsewithpan SE_M_VITAL_THROW2 SOUND_PAN_TARGET
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x0
 	clearmonbg ANIM_TARGET
 	blendoff
 	end
@@ -3414,7 +3414,7 @@ Move_ELECTROWEB:
 	loadspritegfx ANIM_TAG_SPIDER_WEB @Web
 	loadspritegfx ANIM_TAG_WEB_THREAD @String
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT @Yellow Colour
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xD 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xD 0x0
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_WEB_THREAD 0x0 0x6 0xA 0x07FE
 	waitforvisualfinish
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_SPIDER_WEB 0x0 0x6 0xA 0x07FE
@@ -3441,7 +3441,7 @@ Move_ELECTROWEB:
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	delay 0x1
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	end
 
 .align 2
@@ -3753,7 +3753,7 @@ Move_QUIVERDANCE:
 	loadspritegfx ANIM_TAG_HOLLOW_ORB
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
 	monbg ANIM_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xa 0x37ED
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xa 0x37ED
 	waitforvisualfinish
 	launchtask AnimTask_DragonDanceWaver 0x5 0x0
 	playsewithpan SE_M_TELEPORT SOUND_PAN_ATTACKER
@@ -3770,7 +3770,7 @@ Move_QUIVERDANCE:
 	delay 0x1e
 	playsewithpan SE_M_TELEPORT SOUND_PAN_ATTACKER
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xa 0x0 0x37ED
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xa 0x0 0x37ED
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	end
@@ -4028,7 +4028,7 @@ Move_WILDCHARGE:
 	end
 
 WILD_CHARGE_SCREEN_FLASH:
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x07FE
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x07FE
 	return
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -4111,7 +4111,7 @@ ACIDDRIPS: objtemplate ANIM_TAG_POISON_BUBBLE ANIM_TAG_RAZOR_LEAF OAM_DOUBLE_16x
 .pool
 Move_FIERYDANCE:
 	loadspritegfx ANIM_TAG_SMALL_EMBER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xc 0x14be
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xc 0x14be
 	waitforvisualfinish
 	playsewithpan SE_M_SACRED_FIRE2 SOUND_PAN_TARGET
 	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_TARGET 0x0 0x2 0x40 0x1
@@ -4125,7 +4125,7 @@ Move_FIERYDANCE:
 	call FIRE_SPIN_TRAP_PARTICLES
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x9 0x0 0x1f
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xc 0x0 0x14be
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xc 0x0 0x14be
 	waitforvisualfinish
 	end
 
@@ -4510,7 +4510,7 @@ Move_INFERNO:
 Move_HEX:
 	loadspritegfx ANIM_TAG_PURPLE_FLAME
 	loadspritegfx ANIM_TAG_GHOSTLY_SPIRIT
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0x10 0x4C4A @;Deep purple
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0x10 0x4C4A @;Deep purple
 	waitforvisualfinish
 	monbg ANIM_TARGET 
 	bankBG_over_partnerBG
@@ -4522,7 +4522,7 @@ Move_HEX:
 	launchtemplate Template_CurseGhost ANIMSPRITE_IS_TARGET | 4, 0x0 @;Ghostly spirit
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x10 0x0 0x4C4A @;Deep purple
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x10 0x0 0x4C4A @;Deep purple
 	waitforvisualfinish
 	end
 
@@ -4852,7 +4852,7 @@ Move_HEALPULSE:
 	loadspritegfx ANIM_TAG_RED_HEART
 	loadspritegfx ANIM_TAG_GREEN_SPARKLE
 	loadspritegfx ANIM_TAG_BLUE_STAR
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x4 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x4 0x0
 	waitforvisualfinish
 	launchsoundtask SoundTask_LoopSEAdjustPanning 0x7 0xCC, 0xFF00 | SOUND_PAN_ATTACKER, SOUND_PAN_TARGET 0x3 0x4 0x0 0xf
 	call HEALPULSE_Beam
@@ -4870,7 +4870,7 @@ Move_HEALPULSE:
 	call HEALPULSE_Beam
 	waitforvisualfinish
 	call HEALING_ANIM_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x4 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x4 0x0 0x0
 	waitforvisualfinish
 	end
 
@@ -5178,7 +5178,7 @@ SUCKER_PUNCH: objtemplate ANIM_TAG_POISON_JAB ANIM_TAG_POISON_JAB OAM_NORMAL_16x
 .pool
 Move_SCALD:
 	loadspritegfx ANIM_TAG_WATER_GUN
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x5 0x043D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x5 0x043D
 	waitforvisualfinish
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
@@ -5198,7 +5198,7 @@ Move_SCALD:
 	call SCALD_GUN
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 0x4 0x1 0x9 0x0 0x1f
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x5 0x0 0x043D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x5 0x0 0x043D
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
@@ -5260,7 +5260,7 @@ Move_FAIRYWIND:
 	loadspritegfx ANIM_TAG_PINK_CLOUD
 	monbg ANIM_DEF_PARTNER
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x8 0x6e7d
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x8 0x6e7d
 	waitforvisualfinish
 	playsoundpanchange 0x7D SOUND_PAN_ATTACKER SOUND_PAN_TARGET 0x2 0x0
 	launchtemplate FAIRY_WIND 0x83 0x7 0x14 0xfff6 0x14 0x0 0x16 0x14 0x1
@@ -5277,7 +5277,7 @@ Move_FAIRYWIND:
 	waitforvisualfinish
 	stopsound
 	playsewithpan SE_M_GUST2 SOUND_PAN_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x8 0x0 0x6e7d
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x8 0x0 0x6e7d
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
@@ -5293,7 +5293,7 @@ Move_BABYDOLLEYES:
 	loadspritegfx ANIM_TAG_PINK_CLOUD
 	loadspritegfx ANIM_TAG_OPENING_EYE @eye
 	setalpha 8, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0xA 0x7FFF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0xA 0x7FFF
 	waitforvisualfinish
 	launchtemplate Template_OpeningEye ANIMSPRITE_IS_TARGET | 2, 0x4 0xFFE8 0x0 0x1 0x0
 	launchtemplate Template_OpeningEye ANIMSPRITE_IS_TARGET | 2, 0x4 0x18 0x0 0x1 0x0
@@ -5303,7 +5303,7 @@ Move_BABYDOLLEYES:
 	waitforvisualfinish
 	delay 0xa
 	launchtask AnimTask_ShakeMon_2 0x2 0x5 ANIM_TARGET 0x1 0x0 0x9 0x1
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0xA 0x0 0x7FFF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0xA 0x0 0x7FFF
 	waitforvisualfinish
 	blendoff
 	end
@@ -5373,7 +5373,7 @@ Move_MOONBLAST:
 	loadspritegfx ANIM_TAG_GREEN_SPARKLE
 	loadspritegfx ANIM_TAG_FLASH_CANNON_BALL
 	setalpha 0x1000
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 	waitforvisualfinish
 	launchtemplate Template_Moon ANIMSPRITE_IS_TARGET | 0, 0x2 0x20 0x15
 	launchtask AnimTask_AlphaFadeIn 0x3 0x5 0x0 0x10 0x10 0x0 0x1
@@ -5402,7 +5402,7 @@ Move_DRAININGKISS:
 	loadspritegfx ANIM_TAG_DEVIL
 	loadspritegfx ANIM_TAG_IMPACT
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_ORBS 0x0 0xA 0xA 0x7ADF @;Pink
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x8 0x6e7d
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x8 0x6e7d
 	waitforvisualfinish
 	loopsewithpan 0xBC SOUND_PAN_TARGET 0x17 0x3
 	launchtemplate 0x83e4368 ANIMSPRITE_IS_TARGET | 2, 0x2 0x0 0xffe8
@@ -5414,7 +5414,7 @@ Move_DRAININGKISS:
 	waitforvisualfinish
 	call HEALING_ANIM
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x8 0x0 0x6e7d
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x8 0x0 0x6e7d
 	waitforvisualfinish
 	end
 
@@ -5427,7 +5427,7 @@ Move_DAZZLINGGLEAM:
 	loadspritegfx ANIM_TAG_SPARKLE_2
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_IMPACT 0x0 0xF 0xF 0x7F5F @;Pinkish White
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_SPARKLE_2 0x0 0xC 0xC 0x7ADF @;Pink
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xF 0x7FFF @;To white
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xF 0x7FFF @;To white
 	launchtask AnimTask_SetGrayscaleOrOriginalPalette 0x5 0x2 ANIM_ATTACKER 0x0
 	loopsewithpan 0xbc 0xc0 0x10 0x3 
 	call HEALING_STARS
@@ -5456,7 +5456,7 @@ Move_DAZZLINGGLEAM:
 	launchtemplate DISCHARGE_HITS ANIMSPRITE_IS_TARGET | 3, 0x2 0x1 0x1
 	launchtask AnimTask_RapidWhackSound 0x5 0x2 0xd0 SOUND_PAN_TARGET 
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xF 0x0 0x7FFF @;From white
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xF 0x0 0x7FFF @;From white
 	launchtask AnimTask_SetGrayscaleOrOriginalPalette 0x5 0x2 ANIM_ATTACKER 0x1
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
@@ -5466,7 +5466,7 @@ Move_DAZZLINGGLEAM:
 .pool
 Move_DISARMINGVOICE:
 	loadspritegfx ANIM_TAG_NOISE_LINE
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x8 0x6e7d
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x8 0x6e7d
 	waitforvisualfinish
 	launchtask 0x80dd149 0x2 0x2 0x0 0xff
 	call 0x81cdb06
@@ -5476,7 +5476,7 @@ Move_DISARMINGVOICE:
 	waitforvisualfinish
 	launchtask 0x80dd2f5 0x5 0x0
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x8 0x0 0x6e7d
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x8 0x0 0x6e7d
 	waitforvisualfinish
 	end
 
@@ -5529,12 +5529,12 @@ TSPIKES: objtemplate ANIM_TAG_SPIKES ANIM_TAG_SHADOW_BALL OAM_OFF_16x16 gDummySp
 .pool
 Move_HEALINGWISH:
 	loadspritegfx ANIM_TAG_GOLD_STARS
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0x10 0x0
 	waitforvisualfinish
 	playsoundpanchange3 0xc8 SOUND_PAN_TARGET SOUND_PAN_ATTACKER 0xfd 0x0
 	launchtemplate Template_WishStar 0x28 0x0
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x10 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x10 0x0 0x0
 	waitforvisualfinish
 	end
 
@@ -5549,7 +5549,7 @@ Move_LUNARDANCE:
 	loadspritegfx ANIM_TAG_BLUE_STAR
 	monbg side_attacker
 	setalpha 0x1000
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 	launchtask AnimTask_BlendNonAttackerPalettes 0x2 0x4 0x1 0x0 0x10 0x0 
 	waitforvisualfinish
 	launchtemplate Template_Moon TEMPLATE_ATTACKER | 2, 0x2 0x78 0x38
@@ -5624,7 +5624,7 @@ Move_BOOMBURST:
 	launchtemplate BOOMBURST_EXPLOSION 0x3 0x4 0xffe8 0x18 ANIM_TARGET 0x1
 	waitforvisualfinish
 	launchtask AnimTask_InvertScreenColorDoubles 0x2 0x3 0x0 0x101 0x101
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0xC 0x0 0x193D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x2 0xC 0x0 0x193D
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	end
@@ -5650,7 +5650,7 @@ Move_INCINERATE:
 	loadspritegfx ANIM_TAG_SMALL_EMBER
 	monbg ANIM_TARGET
 	splitbgprio ANIM_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x8 0x43d
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x8 0x43d
 	waitforvisualfinish
 	playsewithpan SE_M_FLAME_WHEEL SOUND_PAN_ATTACKER
 	launchtemplate INCINERATE_BALL 0x2 0x6 0x14 0xfff8 0xfff8 0xfff8 0x14 0xffe0
@@ -5668,7 +5668,7 @@ Move_INCINERATE:
 	call INCINERATE_FIRE_HIT
 	call INCINERATE_FIRE_HIT
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x8 0x0 0x43d
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x8 0x0 0x43d
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	end
@@ -5796,7 +5796,7 @@ Move_GEOMANCY:
 
 GEOMANCY_CHARGE_ANIM:
 	loadspritegfx ANIM_TAG_FOCUS_ENERGY @endure buff effect
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	waitforvisualfinish
 	playsewithpan SE_M_COSMIC_POWER SOUND_PAN_ATTACKER
 	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_ATTACKER 0x0 0x2 0x5f 0x1
@@ -5807,7 +5807,7 @@ GEOMANCY_CHARGE_ANIM:
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x2 0x0 0x5 0x7C60
 	call BUFFEFFECT
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x8 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x8 0x0 0x0
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x2 0x5 0x0 0x7C60
 	waitforvisualfinish
 	blendoff
@@ -5864,7 +5864,7 @@ BUFFEFFECT:
 
 GEOMANCY_ATTACK_ANIM:
 	loadspritegfx ANIM_TAG_FIRE_PLUME @dragon rage
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x24CF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x24CF
 	playsewithpan SE_M_MILK_DRINK SOUND_PAN_ATTACKER
 	launchtemplate GEOMANCY_RING 0x2 0x0
 	delay 0x1
@@ -5879,7 +5879,7 @@ GEOMANCY_ATTACK_ANIM:
 	launchtemplate GEOMANCY_RING 0x2 0x0
 	waitforvisualfinish
 	playsewithpan SE_M_DRAGON_RAGE SOUND_PAN_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x10 0x4D01
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x10 0x4D01
 	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_ATTACKER 0x0 0x2 0x25 0x1
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x2 0x0 0x5 0x1F
 	launchtemplate REDCELLS2 0x2 0x5 0x14 0x20 0xffd0 0x32 0x1
@@ -5891,7 +5891,7 @@ GEOMANCY_ATTACK_ANIM:
 	call BUFFEFFECTATTACK
 	call BUFFEFFECTATTACK
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x4D01
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x4D01
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x2 0x5 0x0 0x1F
 	waitforvisualfinish
 	blendoff
@@ -5933,7 +5933,7 @@ Move_FLOWERSHIELD:
 	loadspritegfx ANIM_TAG_FLOWER
 	loadspritegfx ANIM_TAG_IMPACT
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x8 0x6e7d
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x8 0x6e7d
 	waitforvisualfinish
 	playsewithpan SE_M_PETAL_DANCE SOUND_PAN_ATTACKER
 	launchtemplate 0x83e2b94 0x2 0x4 0x0 0xffe8 0x8 0x8c
@@ -5954,7 +5954,7 @@ Move_FLOWERSHIELD:
 	launchtemplate 0x83e2bac 0x2 0x4 0x14 0xfff0 0xe 0x50
 	launchtemplate 0x83e2bac 0x2 0x4 0xffec 0xfff2 0x10 0x50
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x8 0x0 0x6e7d
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x8 0x0 0x6e7d
 	waitforvisualfinish
 	blendoff
 	end
@@ -5965,7 +5965,7 @@ Move_ROTOTILLER:
 	loadspritegfx ANIM_TAG_MUD_SAND
 	loadspritegfx ANIM_TAG_DIRT_MOUND
 	loadspritegfx ANIM_TAG_GREEN_SPARKLE
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x112C
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x112C
 	waitforvisualfinish
 	launchtemplate Template_DigMound 0x1 0x3 0x0 0x0 0xb4
 	launchtemplate Template_DigMound 0x1 0x3 0x0 0x1 0xb4
@@ -5976,7 +5976,7 @@ Move_ROTOTILLER:
 	call GROUND_DIGGING
 	call GROUND_DIGGING
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x112C
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x112C
 	waitforvisualfinish
 	end
 
@@ -6001,7 +6001,7 @@ Move_STICKYWEB:
 	loadspritegfx ANIM_TAG_SPARK_2
 	loadspritegfx ANIM_TAG_SPIDER_WEB
 	loadspritegfx ANIM_TAG_WEB_THREAD
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x9 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x9 0x0
 	waitforvisualfinish
 	loopsewithpan 0x7a SOUND_PAN_ATTACKER 0x9 0x6
 	call STRING_SHOT_THREAD
@@ -6025,7 +6025,7 @@ Move_STICKYWEB:
 	launchtemplate CENTRED_WEB ANIMSPRITE_IS_TARGET | 2, 0x2 0xFFFF 0xFFF5
 	launchtemplate CENTRED_WEB ANIMSPRITE_IS_TARGET | 2, 0x2 0xFFF5 10
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x9 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x9 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	end
@@ -6034,7 +6034,7 @@ Move_STICKYWEB:
 .pool
 Move_STOREDPOWER:
 	loadspritegfx ANIM_TAG_RED_ORB
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	playsewithpan SE_M_SUPERSONIC SOUND_PAN_TARGET
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x1 0x0 0x9 0x1f
 	delay 0x40
@@ -6051,7 +6051,7 @@ Move_STOREDPOWER:
 	launchtemplate Template_HiddenPowerOrbScatter ANIMSPRITE_IS_TARGET | 2, 0x1 0xa0
 	launchtemplate Template_HiddenPowerOrbScatter ANIMSPRITE_IS_TARGET | 2, 0x1 SOUND_PAN_ATTACKER
 	launchtemplate Template_HiddenPowerOrbScatter ANIMSPRITE_IS_TARGET | 2, 0x1 0xe0
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x8 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x8 0x0 0x0
 	waitforvisualfinish
 	end
 
@@ -6365,7 +6365,7 @@ Move_ROAROFTIME:
 	loadspritegfx ANIM_TAG_ORBS
 	loadspritegfx ANIM_TAG_EXPLOSION
 	loadspritegfx ANIM_TAG_WATER_GUN
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 	delay 0x20
 	monbg side_attacker
 	setalpha 12, 8
@@ -6374,9 +6374,9 @@ Move_ROAROFTIME:
 	waitforvisualfinish
 	clearmonbg side_attacker
 	blendoff
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x0
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0xffff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0xffff
 	launchtask AnimTask_play_growling_cry 0x2 0x2 ANIM_ATTACKER 0xff
 	delay 0x20
 	launchtask AnimTask_ShakeMonInPlace 0x2 0x5 0x1 0xa 0x0 0x14 0x1
@@ -6398,7 +6398,7 @@ Move_ROAROFTIME:
 	playsewithpan SE_M_SELF_DESTRUCT SOUND_PAN_TARGET
 	launchtemplate ROAROFTIME_BLUEBOMB 0x3 0x4 0xffe8 0x18 0x1 0x1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0xffff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0xffff
 	waitforvisualfinish
 	end
 
@@ -6412,7 +6412,7 @@ Move_SPACIALREND:
 	loadspritegfx ANIM_TAG_BERRY_EATEN @Pink Palette
 	monbg ANIM_DEF_PARTNER
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 
 	loopsewithpan 0x85 SOUND_PAN_ATTACKER 0xd 0x2
 	launchtemplate TWISTYS 0x3 0x4 0x0 0x0 0x38 0x0
@@ -6440,7 +6440,7 @@ Move_SPACIALREND:
 	waitforvisualfinish
 	restorebg
 	waitbgfadein
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x0 0x0
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
 	end
@@ -6485,7 +6485,7 @@ Move_FINALGAMBIT:
 	loadspritegfx ANIM_TAG_PINK_CLOUD @yawn animation
 	loadspritegfx ANIM_TAG_WATER_IMPACT @blue colour
 	loadspritegfx ANIM_TAG_EXPLOSION @explosion animation
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0 @Darken
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0 @Darken
 	waitforvisualfinish
 	launchtask AnimTask_ShakeMon_2 0x2 0x5 0x0 0x1 0x0 0xa 0x1
 	launchtask AnimTask_pal_fade_complex 0x2 0x6 PAL_ATK 0x0 0x2 0x0 0x8 0x7fff
@@ -6504,7 +6504,7 @@ Move_FINALGAMBIT:
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x3 0xf 0x1
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	end
 
@@ -6517,7 +6517,7 @@ GAMBIT_EXPLOSIONHIT: objtemplate ANIM_TAG_EXPLOSION ANIM_TAG_WATER_IMPACT OAM_OF
 Move_SHADOWFORCE:
 	loadspritegfx ANIM_TAG_POISON_BUBBLE
 	loadspritegfx ANIM_TAG_IMPACT
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0xF 0xFFFF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0xF 0xFFFF
 	choosetwoturnanim SHADOW_FORCE_PREP SHADOW_FORCE_ATTACK
 SHADOW_FORCE_WAIT_END:
 	waitforvisualfinish
@@ -6541,7 +6541,7 @@ SHADOW_FORCE_PREP:
 	makebankvisible 0x0
 	delay 0x5
 	makebankinvisible 0x0
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0xF 0x0 0xFFFF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0xF 0x0 0xFFFF
 	goto SHADOW_FORCE_WAIT_END
 SHADOW_FORCE_ATTACK:
 	monbg ANIM_TARGET
@@ -6562,7 +6562,7 @@ SHADOW_FORCE_ATTACK:
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0xF 0x0 0xFFFF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0xF 0x0 0xFFFF
     goto SHADOW_FORCE_WAIT_END
 
 .align 2
@@ -6598,17 +6598,17 @@ Move_RETALIATE:
 	monbg ANIM_DEF_PARTNER
 	setalpha 0x809
 	launchtask AnimTask_AttackerPunchWithTrace 0x2 0x2 0x7128 0xa
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 	waitforvisualfinish
 	playsewithpan SE_M_CUT SOUND_PAN_TARGET
 	launchtemplate 0x83E3E48 0x2 0x1 0x0
 	launchtemplate 0x83E3E48 0x2 0x1 0x1
 	delay 0x38
 	playsewithpan SE_M_DOUBLE_SLAP SOUND_PAN_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x10 0x43D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x10 0x43D
 	waitforvisualfinish
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x3 0xf 0x1
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x043D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x043D
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
@@ -6627,7 +6627,7 @@ Move_JUDGMENT:
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_GUST 0x0 0xE 0xE 0x0 @;Black
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_HANDS_AND_FEET 0x0 0xA 0xA 0x0 @;Black
 	monbg ANIM_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xF 0x7FFF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xF 0x7FFF
 	waitforvisualfinish
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x3 83 0x1
 	launchtemplate BLACKCHARGE ANIMSPRITE_IS_TARGET | 1, 0x1, ANIM_TARGET
@@ -6666,7 +6666,7 @@ Move_JUDGMENT:
 	delay 0x5
 	call OUTWARDSPIKES2
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xF 0x0 0x7FFF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xF 0x0 0x7FFF
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	end
@@ -6725,7 +6725,7 @@ GRAYINWARD: objtemplate ANIM_TAG_ORBS ANIM_TAG_HANDS_AND_FEET OAM_NORMAL_BLEND_1
 Move_FREEZEDRY:
 	monbg ANIM_DEF_PARTNER
 	loadspritegfx ANIM_TAG_ICE_CRYSTALS
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x2 0x0 0x9 0x7f4c
 	delay 0x14
 	playsewithpan SE_M_STRING_SHOT SOUND_PAN_TARGET
@@ -6748,7 +6748,7 @@ Move_FREEZEDRY:
 	waitplaysewithpan SE_M_HAIL SOUND_PAN_TARGET 0x11
 	delay 0x44
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x2 0x9 0x0 0x7f4c
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x2 0xC 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
@@ -7006,7 +7006,7 @@ Move_HYPERSPACEHOLE:
 	loadspritegfx ANIM_TAG_WHITE_SHADOW @Destiny Bond
 	loadspritegfx ANIM_TAG_QUICK_GUARD_HAND @Black Colour
 	loadspritegfx ANIM_TAG_POISON_BUBBLE @Poison Colour
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x7FFF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x7FFF
 	waitforvisualfinish
 	playsewithpan SE_M_FAINT_ATTACK SOUND_PAN_ATTACKER
 	makebankinvisible ANIM_ATTACKER
@@ -7051,7 +7051,7 @@ HYPERSPACE_HOLE_LOOP:
 	makebankinvisible ANIM_ATTACKER
 	delay 0x1
 	makebankvisible ANIM_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x7FFF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x7FFF
 	waitforvisualfinish
 	end
 
@@ -7109,7 +7109,7 @@ Move_HYPERSPACEFURY:
 	loadspritegfx ANIM_TAG_HOOPA_RING @Hoopa Ring
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_POISON_BUBBLE
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xA 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xA 0x0
 	waitforvisualfinish
 	playsewithpan SE_M_NIGHTMARE SOUND_PAN_ATTACKER
 	launchtemplate HYPERSPACEFURY_RING 0x3 0x4 0x0 0x0 0x38 0x0
@@ -7181,7 +7181,7 @@ Move_HYPERSPACEFURY:
 	makebankinvisible ANIM_ATTACKER
 	delay 0x1
 	makebankvisible ANIM_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x0 0x0
 	end
 
 HYPERSPACEFURY_RANDOMHIT:
@@ -7477,7 +7477,7 @@ PRECIPICE_PLUME: objtemplate  ANIM_TAG_FIRE_PLUME ANIM_TAG_FIRE_PLUME OAM_OFF_32
 @Credits to Lixdel
 Move_STEAMERUPTION:
 	loadspritegfx ANIM_TAG_STEAM_ERUPTION @Steam Eruption Particle
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x7 0x043D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x7 0x043D
 	delay 0x20
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
@@ -7507,7 +7507,7 @@ Move_STEAMERUPTION:
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x9 0x0 0x1f
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x7 0x0 0x043D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x7 0x0 0x043D
 	waitforvisualfinish
 	end
 
@@ -7529,7 +7529,7 @@ Move_METALBURST:
 	loadspritegfx ANIM_TAG_SPARKLE_2
 	launchtask AnimTask_GrayscaleParticle 0x5 0x1 ANIM_TAG_SPARKLE_2
 	launchtask AnimTask_GrayscaleParticle 0x5 0x1 ANIM_TAG_IMPACT
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0 @;To Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0 @;To Black
 	loopsewithpan 0x71 SOUND_PAN_ATTACKER 0x1c 0x2
 	call HEALING_STARS
 	waitforvisualfinish
@@ -7557,7 +7557,7 @@ Move_METALBURST:
 	launchtemplate Template_LusterPurgeHits 0x83 0x2 0x1 0x2 
 	launchtask AnimTask_RapidWhackSound 0x5 0x2 0xd0 SOUND_PAN_TARGET 
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0 @;From Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0 @;From Black
 	clearmonbg ANIM_TARGET
 	end
 
@@ -7798,7 +7798,7 @@ Move_DIAMONDSTORM:
 	loadspritegfx ANIM_TAG_ICE_CRYSTALS
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xF 0x1888
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xF 0x1888
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_ICE_CRYSTALS 0x0 0xD 0xD 0x7DDE @;Pink
 	waitforvisualfinish
 	playsoundpanchange 0x92 SOUND_PAN_ATTACKER SOUND_PAN_TARGET 0x2 0x0
@@ -7860,7 +7860,7 @@ Move_DIAMONDSTORM:
 	launchtemplate gBasicHitSplatSpriteTemplate 0x83 0x4 0x20 0x14 0x1 0x3
 	playsewithpan SE_M_ICY_WIND SOUND_PAN_TARGET
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xF 0x0 0x1888
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xF 0x0 0x1888
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
@@ -7936,7 +7936,7 @@ Move_SYNCHRONOISE:
 	loadspritegfx ANIM_TAG_AIR_WAVE_2 @aero particles
 	monbg ANIM_DEF_PARTNER
 	leftopponentbankBG_over_partnerBG 0x1
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0 @Darken
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0 @Darken
 	waitforvisualfinish
 	playsoundpanchange 0xAE SOUND_PAN_ATTACKER SOUND_PAN_TARGET 0x2 0x0
 	launchtemplate SYNCHRONOISE_VIOLETRING 0x0 0x7 0x2d 0x0 0x0 0x0 0x0 0x0 0x1
@@ -7961,7 +7961,7 @@ Move_SYNCHRONOISE:
 	launchtemplate SYNCHRONOISE_AEROWHEEL 0x81 0x5 0x0 0xffef 0xff20 0xffe0 0x28
 	launchtemplate SYNCHRONOISE_AEROWHEEL 0x81 0x5 0x0 0xffef 0x70 0xff80 0x28
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0 @Darken
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0 @Darken
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	end
@@ -8057,7 +8057,7 @@ Move_NIGHTDAZE:
 	loadspritegfx ANIM_TAG_THIN_RING @uproar
 	loadspritegfx ANIM_TAG_PURPLE_FLAME @dark violet color
 	loadspritegfx ANIM_TAG_RED_ORB @circles
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	waitforvisualfinish
 	playsewithpan SE_ORB SOUND_PAN_ATTACKER
 	launchtemplate DAZE_VIOLETRINGS 0x3 0x6 0x0 0x0 0x0 0x0 0x1F 0x8
@@ -8088,7 +8088,7 @@ Move_NIGHTDAZE:
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xA 0x5 ANIM_PAL_DEF 0x2 0xC 0x0 0x2002
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xA 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xA 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	end
 
@@ -8132,7 +8132,7 @@ Move_LANDSWRATH:
 	loadspritegfx ANIM_TAG_NEEDLE @For the geyser
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_NEEDLE 0x0 0xA 0xA 0x079D @;Yellow
 	monbg ANIM_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0
 	waitforvisualfinish
 	launchtask AnimTask_screen_shake 0x5 0x3 0x5 0x18 0x5
 	launchtask AnimTask_screen_shake 0x5 0x3 0x4 0x18 0x5
@@ -8146,7 +8146,7 @@ Move_LANDSWRATH:
 	call LANDS_WRATH_GEYSER
 	call LANDS_WRATH_GEYSER
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0
 	clearmonbg ANIM_ATTACKER
 	end
 
@@ -8231,7 +8231,7 @@ Move_OBLIVIONWING:
 	playsewithpan SE_M_FLY SOUND_PAN_ATTACKER
 	launchtemplate Template_FlyBallUp 0x2 0x4 0x0 0x0 0xd 0x150 @Fly up
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	waitforvisualfinish
 	launchsoundtask SoundTask_LoopSEAdjustPanning 0x7 0xf0, 0xFF00 | SOUND_PAN_ATTACKER, SOUND_PAN_TARGET 0x1 0xf 0x0 0x5
 	call OBLIVION_CREATE_BEAM
@@ -8252,7 +8252,7 @@ Move_OBLIVIONWING:
 	makebankvisible ANIM_ATTACKER
 	call HEALING_ANIM
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	waitforvisualfinish
 	end
 
@@ -8422,7 +8422,7 @@ TECHNO_BLAST_NORMAL_ANIM2:
 	loadspritegfx ANIM_TAG_GRAY_SMOKE @dispersal
 	monbg ANIM_ATTACKER
 	setalpha 0x80E
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	waitforvisualfinish
 	loopsewithpan 0x85 SOUND_PAN_ATTACKER 0xE 0x8
 	launchtemplate WHITECIRCLES 0x2 0x3 0x28 0x28 0x10
@@ -8478,7 +8478,7 @@ TECHNO_BLAST_NORMAL_ANIM2:
 	delay 0x2
 	launchtemplate WHITEDISPERSAL ANIMSPRITE_IS_TARGET | 2, 0x4, 0xfff8 0x8 0x1 0x0
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	blendoff
 	clearmonbg ANIM_ATTACKER
@@ -8529,7 +8529,7 @@ TECHNO_BLAST_ELECTRIC_ANIM:
 	loadspritegfx ANIM_TAG_GRAY_SMOKE @dispersal
 	monbg ANIM_ATTACKER
 	setalpha 0x80E
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	waitforvisualfinish
 	loopsewithpan 0x85 SOUND_PAN_ATTACKER 0xE 0x8
 	launchtemplate Template_GrowingChargeOrb 0x2 0x1 0x0
@@ -8579,7 +8579,7 @@ TECHNO_BLAST_ELECTRIC_ANIM:
 	launchtemplate Template_Electricity ANIMSPRITE_IS_TARGET | 2, 0x4, 0x2 0xfff8 0x5 0x0
 	launchtemplate Template_Electricity ANIMSPRITE_IS_TARGET | 2, 0x4, 0xffec 0xf 0x5 0x1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	blendoff
 	clearmonbg ANIM_ATTACKER
@@ -8613,7 +8613,7 @@ TECHNO_BLAST_WATER_ANIM:
 	loadspritegfx ANIM_TAG_BUBBLE @bubbles
 	monbg ANIM_ATTACKER
 	setalpha 0x80E
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x1
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x1
 	waitforvisualfinish
 	launchtemplate BLUECHARGE 0x2 0x1 0x0
 	playsewithpan SE_M_CRABHAMMER SOUND_PAN_ATTACKER
@@ -8718,7 +8718,7 @@ TECHNO_BLAST_WATER_ANIM:
 	launchtemplate BUBBLES 0x2 0x4 0xffec 0x14 0x19 0x1
 	launchtemplate BUBBLES 0x2 0x4 0xc 0x0 0x19 0x1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	blendoff
 	clearmonbg ANIM_ATTACKER
@@ -8741,7 +8741,7 @@ TECHNO_BLAST_FIRE_ANIM:
 	loadspritegfx ANIM_TAG_GRAY_SMOKE @dispersal
 	monbg ANIM_ATTACKER
 	setalpha 0x80E
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	waitforvisualfinish
 	launchtemplate REDCHARGE 0x2 0x1 0x0
 	delay 0x5
@@ -8777,7 +8777,7 @@ TECHNO_BLAST_FIRE_ANIM:
 	delay 0x2
 	launchtemplate REDDISPERSAL ANIMSPRITE_IS_TARGET | 2, 0x4, 0xfff8 0x8 0x1 0x0
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	blendoff
 	clearmonbg ANIM_ATTACKER
@@ -8820,7 +8820,7 @@ TECHNO_BLAST_ICE_ANIM:
 	loadspritegfx ANIM_TAG_SPARK_2 @blast particles
 	loadspritegfx ANIM_TAG_GRAY_SMOKE @dispersal
 	monbg ANIM_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	waitforvisualfinish
 	launchtemplate ICECHARGE 0x2 0x1 0x0
 	delay 0x5
@@ -8867,7 +8867,7 @@ TECHNO_BLAST_ICE_ANIM:
 	launchtemplate Template_IceCrystalHitSmall ANIMSPRITE_IS_TARGET | 2, 0x3, 0x0 0x0 0x0
 	launchtemplate Template_IceCrystalHitLarge ANIMSPRITE_IS_TARGET | 2, 0x3, 0x14 0x2 0x0
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	end
@@ -8996,7 +8996,7 @@ Move_SECRETSWORD:
 	monbg ANIM_ATTACKER
 	setalpha 12, 8
 	playsewithpan SE_M_SWORDS_DANCE SOUND_PAN_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0x10 0x0
 	launchtemplate Template_SwordsDanceBlade 0x2 0x2 0x0 0x0
 	delay 0x16
 	launchtask AnimTask_FlashAnimTagWithColor 0x2 0x7 ANIM_TAG_SWORD 0x2 0x2 0x7ff2 0x10 0x0 0x0
@@ -9010,7 +9010,7 @@ Move_SECRETSWORD:
 	delay 0x5
 	launchtask AnimTask_ShakeMon 0x2 0x5 0x1 0x0 0x3 0xa 0x1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x10 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x10 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
@@ -9065,7 +9065,7 @@ Move_BOLTSTRIKE:
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT @Electric Circle
 	monbg ANIM_ATTACKER
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x2 0x0 0x9 0x07FE
 	launchtask AnimTask_ChargeBalls 0x2 0x4 ANIM_ATTACKER 0x40 0x0 0x2
 	playsewithpan SE_M_CHARGE SOUND_PAN_ATTACKER
@@ -9096,7 +9096,7 @@ Move_BOLTSTRIKE:
 	clearmonbg ANIM_TARGET
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x2 0x9 0x0 0x07FE
 	call UNSET_SCROLLING_BG
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x0 0x0
 	blendoff
 	waitforvisualfinish
 	end
@@ -9106,7 +9106,7 @@ Move_BOLTSTRIKE:
 Move_BLUEFLARE:
 	loadspritegfx ANIM_TAG_SMALL_EMBER @Fire
 	loadspritegfx ANIM_TAG_METAL_BITS @Blue Flare Colour
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0x10 0x0
 	loopsewithpan 0x89 SOUND_PAN_ATTACKER 0x7 0x9
 	launchtemplate BLUE_FLAMEJAB ANIMSPRITE_IS_TARGET | 2, 0x5 0x1 0x0 0x0 0xffe0 0x10
 	delay 0x2
@@ -9144,7 +9144,7 @@ Move_BLUEFLARE:
 	playsewithpan SE_M_FLAME_WHEEL SOUND_PAN_ATTACKER
 	call BLUE_BURN_CHANCE_ANIM
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0x0 0x0
 	launchtask AnimTask_pal_fade 0xa 0x5 0x4 0x1 0x9 0x0 0x1f
 	call UNSET_SCROLLING_BG
 	waitforvisualfinish
@@ -9202,7 +9202,7 @@ FREEZE_SHOCK_CHARGE:
 
 FREEZE_SHOCK_ATTACK:
 	loopsewithpan 0x82 SOUND_PAN_TARGET 0x5 0x5
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 	monbg ANIM_TARGET
 	waitforvisualfinish
 	playsewithpan SE_M_THUNDER_WAVE SOUND_PAN_ATTACKER
@@ -9222,7 +9222,7 @@ FREEZE_SHOCK_ATTACK:
 	call PARALYZE_CHANCE_ANIM
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x0
 	waitforvisualfinish
 	end
 
@@ -9242,7 +9242,7 @@ Move_ICEBURN:
 	waitforvisualfinish
 	end
 ICE_BURN_PREP:
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	waitforvisualfinish
 	loopsewithpan 0x82 SOUND_PAN_TARGET 0x4 0x3
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x1 0x8 0x0 0x0
@@ -9251,7 +9251,7 @@ ICE_BURN_PREP:
 	delay 0x14
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x1 0xf 0x0 0x7fff
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	end
 ICE_BURN_ATTACK:
@@ -9311,7 +9311,7 @@ Move_VCREATE:
 	loadspritegfx ANIM_TAG_JAGGED_MUSIC_NOTE @red color
 	loadspritegfx ANIM_TAG_ECLIPSING_ORB @defense curl animation
 	monbg side_attacker
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0 @Darken
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0 @Darken
 	launchtemplate V_REDCIRCLE 0x2 0x4 0x0 0x11 0x0 0x1
 	playsewithpan SE_M_MEGA_KICK SOUND_PAN_ATTACKER
 	delay 0x2
@@ -9377,7 +9377,7 @@ Attack:
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	call UNSET_SCROLLING_BG
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x0 0xffff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x0 0xffff
 	waitforvisualfinish
 	end
 
@@ -9405,7 +9405,7 @@ Move_FUSIONFLARE:
 	monbg ANIM_ATTACKER
 	loopsewithpan 0x85 SOUND_PAN_ATTACKER 0xd 0x3
 	launchtask AnimTask_pal_fade 0x2 0x5 PAL_ATK 0x7 0x0 0xB 0x001F @;Red
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x7 0x0 0xC 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x7 0x0 0xC 0x0 @;Black
 	launchtemplate FUSION_FLARE_BALL ANIMSPRITE_IS_TARGET | 3, 0x5, 0, -40, FUSION_FLARE_PAUSE_AFTER_GROW, FUSION_FLARE_ARC_DURATION, -20
 	launchtask AnimTask_IsPoweredUpFusionMove 0x2 0x0
 	jumpifargmatches 0x0 0x1 FUSION_FLARE_POWERED_UP_INTRO
@@ -9435,7 +9435,7 @@ FUSION_FLARE_REJOIN:
 FUSION_FLARE_END:
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0x2 0x5 ANIM_PAL_DEF 0x1 0xB 0x0 0x001F @;From red
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0 @;From black
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
@@ -9499,7 +9499,7 @@ FUSION_BOLT_REJOIN:
 	playsewithpan SE_M_SWAGGER SOUND_PAN_ATTACKER
 	makebankinvisible ANIM_ATTACKER
 	launchtask AnimTask_pal_fade 0x2 0x5 PAL_ATK 0x0 0x0 0x0 0x7960 @;From blue
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0x0 0xC 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x2 0x0 0xC 0x0 @;Black
 	launchtemplate FUSION_BOLT_BALL ANIMSPRITE_IS_TARGET | 3, 0x7, 0, 0, 20, -40, FUSION_BOLT_PAUSE_AFTER_ARC, FUSION_BOLT_ARC_DURATION, -20
 	delay FUSION_BOLT_ARC_DURATION
 	loopsewithpan 0xce SOUND_PAN_ABOVE 0xA 5
@@ -9520,7 +9520,7 @@ FUSION_BOLT_REJOIN:
 FUSION_BOLT_END:
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0x2 0x5 ANIM_PAL_DEF 0x1 0xB 0x0 0x7960 @;From blue
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0 @;From black
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
@@ -9556,7 +9556,7 @@ Move_FELLSTINGER:
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_LEER 0x0 0xC 0xC 0x5917 @;Purply
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_IMPACT 0x0 0xC 0xC 0x5917 @;Purply
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_SPARK_2 0x0 0xC 0xC 0x71DD @;Pinkish
-	launchtask AnimTask_pal_fade 0xA 0x5 PAL_BG 0x0 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xA 0x5 ANIM_PAL_BG 0x0 0x0 0x10 0x0
 	waitforvisualfinish
  	launchtemplate Template_Leer 0x2 0x2 0x18 0xFFF4
 	playsewithpan SE_M_DETECT SOUND_PAN_ATTACKER
@@ -9569,7 +9569,7 @@ Move_FELLSTINGER:
 	launchtemplate 0x83E72F4 ANIMSPRITE_IS_TARGET | 2, 0x5 0x14 0x0 0xFFF8 0x0 0x10
 	waitforvisualfinish
 	launchtask AnimTask_ShakeMon_2 0x2 0x5 ANIM_TARGET 0x0 0x4 0x9 0x1
-	launchtask AnimTask_pal_fade 0xA 0x5 PAL_BG 0x0 0x10 0x10 0x5917
+	launchtask AnimTask_pal_fade 0xA 0x5 ANIM_PAL_BG 0x0 0x10 0x10 0x5917
 	launchtask AnimTask_pal_fade 0xA 0x5 ANIM_PAL_DEF 0x0 0x10 0x10 0x0
 	launchtemplate gBasicHitSplatSpriteTemplate 0x3 0x4 0x0 0x0 0x1 0x1
 	call PARALYZE_CHANCE_ANIM
@@ -9577,7 +9577,7 @@ Move_FELLSTINGER:
 	clearmonbg ANIM_TARGET
 	blendoff
 	launchtask AnimTask_pal_fade 0xA 0x5 ANIM_PAL_DEF 0x0 0x10 0x0 0x0
-	launchtask AnimTask_pal_fade 0xA 0x5 PAL_BG 0x0 0x10 0x0 0x5917
+	launchtask AnimTask_pal_fade 0xA 0x5 ANIM_PAL_BG 0x0 0x10 0x0 0x5917
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xA 0x5 PAL_ALL_BANKS 0x0 0x0 0x0 0x0
 	waitforvisualfinish
@@ -9627,13 +9627,13 @@ Move_DRAGONASCENT:
 	launchtask AnimTask_GrayscaleParticle 0x5 0x1 ANIM_TAG_DRAGON_ASCENT @;"Black" because shiny Rayqauaza is black
 DRAGON_ASCENT_REJOIN_1:
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade, 0xa 0x5, PAL_ATK | PAL_BG | PAL_BG_4 | PAL_BG_5, 4, 0, 14, 0x5400|0x3E0|0x1B	@RGB(21, 31, 27)
+	launchtask AnimTask_pal_fade, 0xa 0x5, PAL_ATK | ANIM_PAL_BG | PAL_BG_4 | PAL_BG_5, 4, 0, 14, 0x5400|0x3E0|0x1B	@RGB(21, 31, 27)
 	playsewithpan 133, SOUND_PAN_ATTACKER
 	waitforvisualfinish
 	playsewithpan 202, SOUND_PAN_ABOVE
 	launchtask AnimTask_scroll_background, 0x5 0x4, -7304, -784, 1, -1
 	delay 2
-	launchtask AnimTask_pal_fade, 0xa 0x5, PAL_ATK | PAL_BG | PAL_BG_4 | PAL_BG_5, 0, 14, 0, 0x5400|0x3E0|0x1B	@RGB(21, 31, 27)
+	launchtask AnimTask_pal_fade, 0xa 0x5, PAL_ATK | ANIM_PAL_BG | PAL_BG_4 | PAL_BG_5, 0, 14, 0, 0x5400|0x3E0|0x1B	@RGB(21, 31, 27)
 	waitforvisualfinish
 	delay 1
 	monbg ANIM_DEF_PARTNER
@@ -9648,7 +9648,7 @@ DRAGON_ASCENT_REJOIN_2:
 	launchtemplate gBasicHitSplatSpriteTemplate, ANIMSPRITE_IS_TARGET | 4, 0x4, -10, 0, 1, 0
 	launchtemplate gSlideMonToOffsetSpriteTemplate, TEMPLATE_ATTACKER | 2, 0x5, 0x1, -32, 0, 0, 3
 	launchtask AnimTask_ShakeMonInPlace, 0x2 0x5, ANIM_TARGET, 6, 0, 12, 1
-	launchtask AnimTask_pal_fade, 0xa 0x5, PAL_ATK | PAL_BG | PAL_BG_4 | PAL_BG_5, 2, 16, 0, 0x6800|0x3E0|0x0	@RGB(26, 31, 0)
+	launchtask AnimTask_pal_fade, 0xa 0x5, PAL_ATK | ANIM_PAL_BG | PAL_BG_4 | PAL_BG_5, 2, 16, 0, 0x6800|0x3E0|0x0	@RGB(26, 31, 0)
 	waitforvisualfinish
 	delay 3
 	launchtemplate gSlideMonToOriginalPosSpriteTemplate, TEMPLATE_ATTACKER | 2, 0x3, 1, 0, 7
@@ -10310,7 +10310,7 @@ Move_THOUSANDARROWS:
 	loadspritegfx ANIM_TAG_NEEDLE @sting
 	monbg ANIM_ATTACKER
 	setalpha 0x80e
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	waitforvisualfinish
 	launchtemplate GREENCHARGE 0x2 0x1 0x0
 	playsewithpan SE_M_CHARGE SOUND_PAN_ATTACKER
@@ -10337,7 +10337,7 @@ Move_THOUSANDARROWS:
 	call THOUSAND_ARROWS_DOWN
 	call THOUSAND_ARROWS_DOWN
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0xffff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0xffff
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	blendoff
@@ -10406,7 +10406,7 @@ Move_THOUSANDWAVES:
 	loadspritegfx ANIM_TAG_IMPACT @pound hits
 	monbg side_attacker
 	setalpha 8, 8 @Please also try no setalpha, using setalpha 12, 8, and using setalpha 8, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	waitforvisualfinish
 	playsewithpan SE_M_MEGA_KICK SOUND_PAN_ATTACKER
 	launchtemplate TW_GREENWHEEL 0x2 0x1 0x0
@@ -10460,7 +10460,7 @@ Move_THOUSANDWAVES:
 	waitforvisualfinish
 	launchtask 0x80A939D 0x2 0x0
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0xffff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0xffff
 	waitforvisualfinish
 	blendoff
 	clearmonbg ANIM_DEF_PARTNER
@@ -10547,7 +10547,7 @@ Move_PARABOLICCHARGE:
 	loadspritegfx ANIM_TAG_LIGHTNING
 	monbg ANIM_ATTACKER
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x6 0xe12
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x6 0xe12
 	waitforvisualfinish
 	launchtask AnimTask_ChargeBalls 0x2 0x4 ANIM_ATTACKER 0x14 0x0 0x2
 	playsewithpan SE_M_CHARGE SOUND_PAN_ATTACKER
@@ -10566,7 +10566,7 @@ Move_PARABOLICCHARGE:
 	waitforvisualfinish
 	delay 0x4
 	call HEALING_ANIM
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x6 0x0 0xe12
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x6 0x0 0xe12
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	blendoff
@@ -10582,7 +10582,7 @@ Move_SEARINGSHOT:
 	loadspritegfx ANIM_TAG_WARM_ROCK @Eruption rock
 	loadspritegfx ANIM_TAG_SMALL_EMBER
 	monbg ANIM_DEF_PARTNER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x2 0x0 0xB 0x115E @;Orangish Red
 	launchtask AnimTask_Splash 0x2 0x2 ANIM_ATTACKER 0x3
 	loopsewithpan 0x89 SOUND_PAN_ATTACKER 0x2 32
@@ -10606,7 +10606,7 @@ Move_SEARINGSHOT:
 	call SEARING_SHOT_PARTNER
 	call SEARING_SHOT_FLAMES_FALL
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x0
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF | PAL_DEF_PARTNER | PAL_ATK_PARTNER 0x1 0xB 0x0 0x1F @;From red
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x1 0xB 0x0 0x115E @;From Orangish Red
 	waitforvisualfinish
@@ -10669,7 +10669,7 @@ Move_SEEDFLARE:
 	loadspritegfx ANIM_TAG_FLYING_DIRT @heat wave animation
 	monbg ANIM_ATTACKER
 	setalpha 0x80e
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x7FFF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x7FFF
 	waitforvisualfinish
 	playsewithpan SE_M_MEGA_KICK SOUND_PAN_ATTACKER
 	launchtemplate SF_GREENCIRCLES 0x2 0x3 0x28 0x28 0x10
@@ -10740,7 +10740,7 @@ Move_SEEDFLARE:
 	delay 0xA
 	launchtemplate SF_GREENWAVES 0x28 0x4 0x3c 0xa00 0x60 0x1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x7FFF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x7FFF
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	blendoff
@@ -10969,7 +10969,7 @@ Move_BURNUP:
 	waitbgfadeout
 	launchtask AnimTask_scroll_background 0x5 0x4 0xA00 0x0 0x1 0xffff
 	waitbgfadein
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x5 0x1c
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x5 0x1c
 	waitforvisualfinish
 	launchtask 0x80BBE11 0x5 0x0
 	waitforvisualfinish
@@ -10998,7 +10998,7 @@ Move_BURNUP:
 	delay 0x1
 	launchtask 0x80BBF09 0x5 0x2 0x0 0x1
 	delay 0x1
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x5 0x0 0x1c
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x5 0x0 0x1c
 	delay 0x1
 	launchtask 0x80BBF09 0x5 0x2 0x1 0x0
 	delay 0x1
@@ -11029,7 +11029,7 @@ Move_CLANGINGSCALES:
 	loadspritegfx ANIM_TAG_POISON_BUBBLE @purple color
 	monbg ANIM_DEF_PARTNER
 	leftopponentbankBG_over_partnerBG 0x1
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x2002
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x2002
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_METAL_SOUND_WAVES 0x0 0xA 0xA 0x642D
 	waitforvisualfinish
 	launchtask AnimTask_ShakeMon_2 0x2 0x5 0x0 0x2 0x0 0x8 0x1
@@ -11043,7 +11043,7 @@ Move_CLANGINGSCALES:
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	delay 0x0
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x2002
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x2002
 	waitforvisualfinish
 	end
 SCALES_SOUNDPARTICLES:
@@ -11234,7 +11234,7 @@ Move_FLEURCANNON:
 	loadspritegfx ANIM_TAG_PINK_HEART @pink color
 	setalpha 12, 8
 	monbg ANIM_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xF 0x7440
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xF 0x7440
 	waitforvisualfinish
 	playsoundpanchange 0xc2 SOUND_PAN_ATTACKER SOUND_PAN_TARGET 0x2 0x0
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_ATTACKER 0x0 0x4 0x32 0x1
@@ -11268,7 +11268,7 @@ Move_FLEURCANNON:
 	delay 0x5
 	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_TARGET 0x0 0x5 0xb 0x1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x7440
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x7440
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
@@ -11467,7 +11467,7 @@ Move_HIGHHORSEPOWER:
 	loadspritegfx ANIM_TAG_HORSESHOE_SIDE_FIST @horseshoe
 	monbg ANIM_TARGET
 	delay 0x2
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0x10 0x0
 	setalpha 12, 8
 	playsewithpan SE_M_MEGA_KICK SOUND_PAN_TARGET
 	launchtemplate HORSESHOE 0x3 0x4 0x0 0x0 0x1 0x32
@@ -11499,7 +11499,7 @@ Move_ICEHAMMER:
 	loadspritegfx ANIM_TAG_ECLIPSING_ORB @gray color
 	loadspritegfx ANIM_TAG_BLACK_SMOKE @smoke
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	playsewithpan SE_M_DOUBLE_TEAM SOUND_PAN_TARGET
 	launchtemplate ICEHAMMER_PUNCHSTOMP ANIMSPRITE_IS_TARGET | 0x3, 0x3 0x0 0xffe0 0xf
 	delay 0x2
@@ -11520,7 +11520,7 @@ Move_ICEHAMMER:
 	launchtemplate ICEHAMMER_GRAYSMOKES ANIMSPRITE_IS_TARGET | 0x4, 0x5 0x0 0x12 0x48 0x1 0x4b
 	call FREEZE_CHANCE_ANIM
 	delay 80 - 39 @;Right before the compression is undone
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	blendoff
 	end
@@ -11537,14 +11537,14 @@ Move_LASERFOCUS:
 	loadspritegfx ANIM_TAG_OPENING_EYE @eyes
 	loadspritegfx ANIM_TAG_LEER @leer
 	monbg ANIM_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	waitforvisualfinish
 	launchtemplate LASERFOCUS_REDEYES 0x5 0x4 0x0 0x0 0x0 0x0
 	waitforvisualfinish
 	playsewithpan SE_M_LEER SOUND_PAN_ATTACKER
 	launchtemplate Template_Leer 0x2 0x2 0x18 0xfff4
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	end
@@ -11665,7 +11665,7 @@ Move_MOONGEISTBEAM:
 	loadspritegfx ANIM_TAG_WATER_GUN @water gun colour
 	loadspritegfx ANIM_TAG_ASSURANCE_HAND @purple colour
 	setalpha 8, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_ELECTRIC_ORBS 0x0 0xF 0xF 0x7FFF @;White
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_CIRCLE_OF_LIGHT 0x0 0xF 0xF 0x7FFC @;Light Blue
 	waitforvisualfinish
@@ -11752,7 +11752,7 @@ Move_MULTIATTACK:
 	loadspritegfx ANIM_TAG_FOCUS_ENERGY @focus energy
 	loadspritegfx ANIM_TAG_CUT @cut
 	monbg ANIM_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	waitforvisualfinish
 	playsewithpan SE_M_DRAGON_RAGE SOUND_PAN_ATTACKER
 	call MULTIATTACK_BUFF
@@ -11769,7 +11769,7 @@ Move_MULTIATTACK:
 	launchtemplate Template_CuttingSlice 0x2 0x3 0x28 0xffd0 0x0
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x3 0xf 0x1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	end
@@ -11892,7 +11892,7 @@ POLLEN_PUFF_ENEMY:
 	loadspritegfx ANIM_TAG_ORBS @hit
 	monbg ANIM_ATTACKER
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x8 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x8 0x0
 	waitforvisualfinish
 	launchtask AnimTask_RockMonBackAndForth 0x5 0x3 ANIM_ATTACKER 0x2 0x0
 	launchtemplate PP_PINKSTARS 0x2 0x4 0xa 0xa 0x19 0x0
@@ -11935,7 +11935,7 @@ POLLEN_PUFF_ENEMY:
 	launchtemplate PP_HITS ANIMSPRITE_IS_TARGET | 2, 0x5 0x1 0x1 0x1E 0x0 0x10 @right
 	launchtemplate PP_HITS ANIMSPRITE_IS_TARGET | 2, 0x5 0x1 0x1 0x16 0xFFEA 0x10 @upperright
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x8 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x8 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
@@ -11958,7 +11958,7 @@ POLLEN_PUFF_ALLY:
 	loadspritegfx ANIM_TAG_SPORE @ball
 	monbg ANIM_ATTACKER
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x8 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x8 0x0
 	waitforvisualfinish
 	launchtask AnimTask_RockMonBackAndForth 0x5 0x3 ANIM_ATTACKER 0x2 0x0
 	launchtemplate PP_PINKSTARS 0x2 0x4 0xa 0xa 0x19 0x0
@@ -11999,7 +11999,7 @@ POLLEN_PUFF_ALLY:
 	delay 0x7
 	launchtemplate PP_PINKHEAL 0x2 0x4 0xa 0xfffb 0x1 0x0
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x8 0x1 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x8 0x1 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
@@ -12068,7 +12068,7 @@ Move_PRISMATICLASER:
 	loadspritegfx ANIM_TAG_GREEN_SPIKE @needle arm animation
 	monbg ANIM_ATTACKER
 	setalpha 0x80E
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 	playsewithpan SE_ELEVATOR SOUND_PAN_ATTACKER
 	launchtemplate PL_BGCHARGE 0x2 0x1 0x0
 	call PL_INWARDSPIKES
@@ -12102,7 +12102,7 @@ Move_PRISMATICLASER:
 	call PL_DOWN
 	call PL_DOWN
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	blendoff
@@ -12297,7 +12297,7 @@ Move_REVELATIONDANCE:
 	loadspritegfx ANIM_TAG_AIR_WAVE @sonicboom
 	loadspritegfx ANIM_TAG_THIN_RING @ring
 	monbg ANIM_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xF 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xF 0x0
 	waitforvisualfinish
 	playsewithpan SE_M_PETAL_DANCE SOUND_PAN_ATTACKER
 	launchtask AnimTask_RockMonBackAndForth 0x5 0x3 ANIM_ATTACKER 0x2 0x0
@@ -12338,7 +12338,7 @@ Move_REVELATIONDANCE:
 	launchtemplate RD_YELLOWDISPERSAL 0x81 0x5 0x0 0xa 0x70 0xff80 0x28
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0003 0x0000 0x0006 0x0001
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xF 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xF 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	end
@@ -12662,7 +12662,7 @@ SOLARBLADE_ATTACK:
 	loadspritegfx ANIM_TAG_SUNLIGHT @sun rays
 	monbg ANIM_ATTACKER
 	setalpha 0x30d
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ALL_BANKS 0x1 0x0 0x6 0x7fff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ALL_BANKS 0x1 0x0 0x6 0x7fff
 	waitforvisualfinish
 	playsewithpan SE_M_SWORDS_DANCE SOUND_PAN_ATTACKER
 	launchtask AnimTask_TranslateMonEllipticalRespectSide 0x2 0x5 ANIM_ATTACKER 0x10 0x6 0x1 0x4
@@ -12679,7 +12679,7 @@ SOLARBLADE_ATTACK:
 	delay 0x2
 	launchtask AnimTask_ShakeMon_2 0x2 0x5 ANIM_TARGET 0x2 0x0 0xC 0x1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ALL_BANKS 0x1 0x6 0x0 0x7fff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ALL_BANKS 0x1 0x6 0x0 0x7fff
 	waitforvisualfinish
 	call UNSET_SCROLLING_BG
 	clearmonbg ANIM_ATTACKER
@@ -12703,7 +12703,7 @@ Move_SPARKLINGARIA:
 	loadspritegfx ANIM_TAG_HYDRO_PUMP @hydro pump
 	monbg ANIM_ATTACKER
 	setalpha 0x80E
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0
 	waitforvisualfinish
 	launchtemplate SA_BLUECHARGE 0x2 0x1 0x0
 	call SA_BUBBLECHARGE
@@ -12715,7 +12715,7 @@ Move_SPARKLINGARIA:
 	call SA_CRAIN
 	call SA_CRAIN
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	blendoff
@@ -12984,7 +12984,7 @@ Move_SPIRITSHACKLE:
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 	waitforvisualfinish
 	playsewithpan SE_M_RAZOR_WIND2 SOUND_PAN_ATTACKER
 	launchtemplate SHACKLE_ARROW ANIMSPRITE_IS_TARGET | 2, 0x5, 0, 0, 0, 0, SPIRIT_SHACKLE_DURATION
@@ -12997,7 +12997,7 @@ Move_SPIRITSHACKLE:
 	delay 0x4
 	launchtemplate SHACKLE_CHAIN ANIMSPRITE_IS_TARGET | 2, 0x2 0xfff0 0x10
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
@@ -13104,7 +13104,7 @@ Move_STRENGTHSAP:
 	delay 0x2
 	launchtemplate SAP_REDSMOKES ANIMSPRITE_IS_TARGET | 2, 0x4, 0xfff8 0x8 0x1 0x0
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x3 0x07FD
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x3 0x07FD
 	delay 0x5
 	playsewithpan SE_M_CRABHAMMER SOUND_PAN_TARGET
 	launchtemplate SAP_PINKABSORB 0x3 0x4 0x0 0x5 0x8 0x1a
@@ -13132,7 +13132,7 @@ Move_STRENGTHSAP:
 	waitforvisualfinish
 	call HEALING_ANIM
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x3 0x0 0x07FD
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x3 0x0 0x07FD
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	end
@@ -13168,7 +13168,7 @@ Move_SUNSTEELSTRIKE:
 	loadspritegfx ANIM_TAG_SMALL_RED_EYE @red color
 	loadspritegfx ANIM_TAG_IMPACT @hit
 	playsewithpan SE_ORB SOUND_PAN_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ATK 0x3 0x0 0xF 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ATK 0x3 0x0 0xF 0x0
 	waitforvisualfinish
 	call SUNSTRIKE_BEAM
 	call SUNSTRIKE_BEAM
@@ -13197,7 +13197,7 @@ Move_SUNSTEELSTRIKE:
 	playsewithpan SE_M_FIRE_PUNCH SOUND_PAN_TARGET
 	waitforvisualfinish
 	makebankvisible ANIM_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ATK 0x3 0xF 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ATK 0x3 0xF 0x0 0x0
 	waitforvisualfinish
 	blendoff
 	clearmonbg ANIM_TARGET
@@ -13225,7 +13225,7 @@ Move_TEARFULLOOK:
 	loadspritegfx ANIM_TAG_SMALL_BUBBLES @tears
 	loadspritegfx ANIM_TAG_OPENING_EYE @eye
 	monbg ANIM_DEF_PARTNER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x5 0x7DE0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x5 0x7DE0
 	waitforvisualfinish
 	playsewithpan SE_M_CONFUSE_RAY SOUND_PAN_TARGET
 	launchtemplate Template_OpeningEye 0x5 0x4 0x0 0x0 0x1 0x0
@@ -13242,7 +13242,7 @@ Move_TEARFULLOOK:
 	launchtemplate Template_TearDrop 0x2 0x2 0x1 0x2
 	launchtemplate Template_TearDrop 0x2 0x2 0x1 0x3
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x5 0x0 0x7DE0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x5 0x0 0x7DE0
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	end
@@ -13297,7 +13297,7 @@ Move_TOXICTHREAD:
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_WEB_THREAD 0x0 0xA 0xA 0x6038 @;Purple
 	monbg ANIM_DEF_PARTNER
 	delay 0x0
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x9 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x9 0x0
 	waitforvisualfinish
 	loopsewithpan 0x7A SOUND_PAN_ATTACKER 0x9 0x6
 	call SPIDER_WEB_THREAD
@@ -13329,7 +13329,7 @@ Move_TOXICTHREAD:
 	clearmonbg ANIM_DEF_PARTNER
 	delay 0x1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x9 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x9 0x0 0x0
 	end
 
 .align 2
@@ -13960,7 +13960,7 @@ Move_CRAFTYSHIELD:
 	loadspritegfx ANIM_TAG_CRAFTY_SHIELD
 	monbg side_attacker
 	splitbgprio ANIM_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x5 0x4DBF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x5 0x4DBF
 	setalpha 0x10
 	delay 0x0
 	playsewithpan SE_M_SWIFT SOUND_PAN_ATTACKER
@@ -14004,7 +14004,7 @@ Move_CRAFTYSHIELD:
 	delay 0x6
 	launchtask 0x80A5CD5 0x5 0x0
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x5 0x0 0x4DBF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x5 0x0 0x4DBF
 	waitforvisualfinish
 	delay 0x1
 	clearmonbg side_attacker
@@ -14182,7 +14182,7 @@ AQUA_RING_BUBBLES: objtemplate ANIM_TAG_SMALL_BUBBLES ANIM_TAG_SMALL_BUBBLES OAM
 Move_AROMATICMIST:
 	loadspritegfx ANIM_TAG_PINK_PETAL
 	playsewithpan SE_M_SWEET_SCENT SOUND_PAN_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x8 0x6E7D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x8 0x6E7D
 	launchtemplate Template_SweetScentPetal 0x2 0x3 0x64 0x0 0x64
 	delay 0x19
 	pancontrol 0x0
@@ -14192,7 +14192,7 @@ Move_AROMATICMIST:
 	launchtask AnimTask_pal_fade_complex 0x2 0x6 ANIM_PAL_DEF | PAL_DEF_PARTNER 0x1 0x5 0x5 0xd 0x56bf
 	call 0x81D2901
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x8 0x0 0x6E7D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x8 0x0 0x6E7D
 	waitforvisualfinish
 	end
 
@@ -14341,7 +14341,7 @@ GRAVITY_BLACKHOLE: objtemplate ANIM_TAG_SHADOW_BALL ANIM_TAG_SHADOW_BALL OAM_NOR
 .pool
 Move_GUARDSPLIT:
 	loadspritegfx ANIM_TAG_BLUEGREEN_ORB
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	loopsewithpan 0xd2 SOUND_PAN_ATTACKER 0x18 0x3
 	call GuardSplitLaunch
 	call GuardSplitLaunch
@@ -14354,7 +14354,7 @@ Move_GUARDSPLIT:
 	call GuardSplitLaunch
 	call GuardSplitLaunch
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	end
 
@@ -14405,13 +14405,13 @@ HEAL_BLOCK_X: objtemplate ANIM_TAG_X_SIGN ANIM_TAG_X_SIGN OAM_OFF_64x64 gDummySp
 Move_IONDELUGE:
 	loadspritegfx ANIM_TAG_IONS @ions
 	monbg ANIM_DEF_PARTNER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xA 0x7440
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xA 0x7440
 	waitforvisualfinish
 	loopsewithpan 0x70 SOUND_PAN_TARGET 0xA 0x9
 	launchtask AnimTask_CreateRaindrops 0x2 0x3 0x0 0x3 0x78
 	launchtask AnimTask_CreateRaindrops 0x2 0x3 0x0 0x3 0x78
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xA 0x0 0x7440
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xA 0x0 0x7440
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	end
@@ -14484,7 +14484,7 @@ Move_MAGNETRISE:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_SPARK_2
 	delay 0x0
-	launchtask AnimTask_pal_fade_complex 0x2 0x6 PAL_BG | PAL_ATK 0xffe1 0x1 0x5 0x5 0x5bff
+	launchtask AnimTask_pal_fade_complex 0x2 0x6 ANIM_PAL_BG | PAL_ATK 0xffe1 0x1 0x5 0x5 0x5bff
 	playsewithpan SE_M_THUNDERBOLT2 SOUND_PAN_ATTACKER
 	launchtask AnimTask_WindUpLunge 0x5 0x7 ANIM_ATTACKER 0xfff4 0x4 0xa 0xa 0xc 0x6
 	launchtemplate Template_ElectricSparkPlayer 0x0 0x7 0x20 0x18 0xbe 0xc 0x0 0x1 0x0
@@ -14509,11 +14509,11 @@ Move_MAGNETRISE:
 	delay 0x0
 	launchtemplate Template_ElectricSparkPlayer 0x0 0x7 0xee 0x18 0xa5 0xa 0x0 0x1 0x1
 	delay 0x0
-	launchtask AnimTask_pal_fade_complex 0x2 0x6 PAL_BG | PAL_ATK 0xffe1 0x1 0x0 0x0 0x5bff
+	launchtask AnimTask_pal_fade_complex 0x2 0x6 ANIM_PAL_BG | PAL_ATK 0xffe1 0x1 0x0 0x0 0x5bff
 	delay 0x14
-	launchtask AnimTask_pal_fade_complex 0x2 0x6 PAL_BG | PAL_ATK 0xffe1 0x1 0x7 0x7 0x5bff
+	launchtask AnimTask_pal_fade_complex 0x2 0x6 ANIM_PAL_BG | PAL_ATK 0xffe1 0x1 0x7 0x7 0x5bff
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade_complex 0x2 0x6 PAL_BG | PAL_ATK 0xffe1 0x1 0x0 0x0 0x5bff
+	launchtask AnimTask_pal_fade_complex 0x2 0x6 ANIM_PAL_BG | PAL_ATK 0xffe1 0x1 0x0 0x0 0x5bff
 	waitforvisualfinish
 	end
 
@@ -14586,7 +14586,7 @@ POWDER_BLACKPOWDER: objtemplate ANIM_TAG_SPORE ANIM_TAG_HANDS_AND_FEET OAM_OFF_1
 Move_POWERSPLIT:
 	loadspritegfx ANIM_TAG_RED_HEART
 	loadspritegfx ANIM_TAG_BLUEGREEN_ORB
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	loopsewithpan 0xd2 SOUND_PAN_ATTACKER 0x18 0x3
 	call POWERSPLIT_Launch
 	call POWERSPLIT_Launch
@@ -14599,7 +14599,7 @@ Move_POWERSPLIT:
 	call POWERSPLIT_Launch
 	call POWERSPLIT_Launch
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	end
 
@@ -14674,7 +14674,7 @@ Move_SIMPLEBEAM:
 	setalpha 8, 8
 	monbg ANIM_TARGET
 	splitbgprio ANIM_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	waitforvisualfinish
 	playsewithpan SE_M_BUBBLE_BEAM SOUND_PAN_TARGET
 	call SIMPLE_BEAMS
@@ -14693,7 +14693,7 @@ Move_SIMPLEBEAM:
 	stopsound
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x2 0x9 0x0 0x7FFF
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
@@ -14769,7 +14769,7 @@ SOAK_WATER: objtemplate ANIM_TAG_HYDRO_PUMP ANIM_TAG_HYDRO_PUMP OAM_DOUBLE_16x16
 @Credits to Lixdel
 Move_TELEKINESIS:
 	loadspritegfx ANIM_TAG_SPARKLE_4 @detect
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x9 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x9 0x0
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x1 0x0 0x9 0x7fff
 	delay 0x12
@@ -14780,7 +14780,7 @@ Move_TELEKINESIS:
 	launchtask AnimTask_SwayMon 0x5 0x5 0x1 0x18 0xD0 0x1 ANIM_TARGET
 	waitforvisualfinish
 	delay 0xA
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x9 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x9 0x0 0x0
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x2 0x9 0x0 0x7fff
 	waitforvisualfinish
 	end
@@ -14791,7 +14791,7 @@ Move_TELEKINESIS:
 Move_TRICKORTREAT:
 	loadspritegfx ANIM_TAG_GHOSTLY_SPIRIT @ghost
 	monbg side_attacker
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xD 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xD 0x0
 	waitforvisualfinish
 	playsewithpan SE_M_PSYBEAM SOUND_PAN_TARGET
 	launchtemplate TOT_GHOST 0x2 0x4 0x0 0xfff6 0x19 0x0
@@ -14811,7 +14811,7 @@ Move_TRICKORTREAT:
 	launchtask AnimTask_pal_fade_complex 0x2 0x6 ANIM_PAL_DEF 0x2 0x2 0x0 0xb 0x0
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x3 0x0 0xf 0x1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xD 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xD 0x0 0x0
 	waitforvisualfinish
 	end
 
@@ -14879,7 +14879,7 @@ Move_FORESTSCURSE:
 	loadspritegfx ANIM_TAG_ROOTS @frenzy plant
 	loadspritegfx ANIM_TAG_GHOSTLY_SPIRIT @curse
 	monbg ANIM_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 	waitforvisualfinish
 	playsewithpan SE_M_SCRATCH SOUND_PAN_ATTACKER
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x2 0x0 0x8 0x02E3
@@ -14908,7 +14908,7 @@ Move_FORESTSCURSE:
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x2 0x8 0x0 0x02E3
 	delay 0x3
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	end
@@ -14927,7 +14927,7 @@ Move_MINDBLOWN:
 	loadspritegfx ANIM_TAG_IMPACT @hit
 	monbg ANIM_TARGET
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xC 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0
 	waitforvisualfinish
 	playsewithpan SE_FALL SOUND_PAN_TARGET
 	launchtemplate MINDBLOWN_BLACEPHALONHEAD ANIMSPRITE_IS_TARGET | 2, 0x3, 0x0 0x0 0x25
@@ -14950,7 +14950,7 @@ Move_MINDBLOWN:
 	call MINDBLOWN_OUTWARD1
 	delay 0x1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	blendoff
 	clearmonbg ANIM_TARGET
@@ -15026,7 +15026,7 @@ Move_PHOTONGEYSER:
 	delay 0xA
 	call GEYSER_SPARKS2
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xF 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xF 0x0
 	clearmonbg ANIM_ATTACKER
 	playsewithpan SE_M_THUNDER_WAVE SOUND_PAN_ATTACKER
 	unloadparticle ANIM_TAG_ORBS @recover
@@ -15061,7 +15061,7 @@ Move_PHOTONGEYSER:
 	call PHOTON_GEYSER_BEAM
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x43FF @;Light yellow
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xF 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xF 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
@@ -15123,7 +15123,7 @@ Move_PLASMAFISTS:
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_SHOCK_3 0x0 0xC 0xC 0x7FA0 @;Blue Electricity
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_HANDS_AND_FEET 0x0 0x8 0x8 0x079D @;Yellow
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 	waitforvisualfinish
 	launchtemplate PFISTS_CHARGE TEMPLATE_ATTACKER | 2, 0x1 0x0
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_ATTACKER 0x0 0x3 0x5c 0x1
@@ -15156,7 +15156,7 @@ Move_PLASMAFISTS:
 	monbg ANIM_TARGET
 	call PFISTS_STRIKE
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xC 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
@@ -15243,7 +15243,7 @@ Move_ELECTRIFY:
 	launchtemplate 0x83E6008 0x84 0x7 0xa 0x0 0x8 0x1e 0xe0 0x28 0x2
 	delay 0xA
 	launchtask AnimTask_pal_fade 0xA 0x5 ANIM_PAL_DEF 0x2 0x0 0xB 0x039B
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x3 0x039B
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x3 0x039B
 	delay 0x4
 	clearmonbg ANIM_ATTACKER
 	delay 0x1
@@ -15274,7 +15274,7 @@ Move_ELECTRIFY:
 	launchtemplate Template_Electricity ANIMSPRITE_IS_TARGET | 2, 0x4, 0xffec 0xf 0x5 0x1
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xA 0x5 ANIM_PAL_DEF 0x2 0xB 0x0 0x039B
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x3 0x0 0x039B
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x3 0x0 0x039B
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	end
@@ -15329,7 +15329,7 @@ Move_FAIRYLOCK:
 	loadspritegfx ANIM_TAG_FAIRY_LOCK_CHAINS @Fairy Lock Chain
 	setalpha 8, 8
 	monbg side_attacker
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x8 0x6B1F
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x8 0x6B1F
 	waitforvisualfinish
 	loopsewithpan 0x94 SOUND_PAN_TARGET 0x6 0x4
 	launchtask AnimTask_VoltTackleBolt 0x5 0x1 0x7
@@ -15340,7 +15340,7 @@ Move_FAIRYLOCK:
 	launchtask AnimTask_VoltTackleBolt 0x5 0x1 0x6
 	launchtask AnimTask_VoltTackleBolt 0x5 0x1 0x35
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x8 0x0 0x6B1F
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x8 0x0 0x6B1F
 	waitforvisualfinish
 	clearmonbg side_attacker
 	blendoff
@@ -15386,7 +15386,7 @@ Move_LIGHTOFRUIN:
 	waitforvisualfinish
 	launchtask AnimTask_ChargeBalls 0x2 0x4 ANIM_ATTACKER 0x14 0x0 0x2   @Use pink particles for this launchtask (ANIM_TAG_PINK_PETAL or ANIM_TAG_PINK_HEART)
 	playsoundpanchange 0xc2 SOUND_PAN_ATTACKER SOUND_PAN_TARGET 0x2 0x0
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xF 0x6B1F
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xF 0x6B1F
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_ATTACKER 0x0 0x4 0x32 0x1
 	launchtask AnimTask_FlashAnimTagWithColor 0x2 0x7 ANIM_TAG_ORBS 0x1 0xc 0x1f 0x10 0x0 0x0
 	call LOR_PINK_BEAM
@@ -15425,7 +15425,7 @@ Move_LIGHTOFRUIN:
 	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_TARGET 0x0 0x5 0xb 0x1
 	launchtemplate LOR_PINKEXPLOSION 0x3 0x4 0x0 0x0 0x1 0x1
 	delay 0x10
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x7FFF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x7FFF
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x1 0x0 0x0 0x0
 	waitforvisualfinish
@@ -15864,7 +15864,7 @@ Move_DYNAMAX_CANNON:
 	loadspritegfx ANIM_TAG_HYDRO_PUMP
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_THIN_RING 0x0 0xA 0xA 0x74DB @;Pinkish Red
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_HYDRO_PUMP 0x0 0xC 0xC 0x74DB @;Pinkish Red
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0x0 0x10 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x2 0x0 0x10 0x0 @;Black
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x2 0x0 0x10 0x74DB @;Pinkish Red
 	launchtask AnimTask_BlendNonAttackerPalettes 0x2 0x4 0x2 0x0 0x10 0x0 @;Black
 	playsewithpan SE_M_MEGA_KICK SOUND_PAN_ATTACKER
@@ -15919,7 +15919,7 @@ Move_DYNAMAX_CANNON:
 Move_SNIPE_SHOT:
 	loadspritegfx ANIM_TAG_UNUSED_IMPACT_2
 	loadspritegfx ANIM_TAG_LEER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0x10 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0x10 0x0 @;Black
 	waitforvisualfinish
  	launchtemplate Template_Leer TEMPLATE_ATTACKER | 2, 0x2 0x18 0xFFF4
 	playsewithpan SE_M_DETECT SOUND_PAN_ATTACKER
@@ -15930,7 +15930,7 @@ Move_SNIPE_SHOT:
 	waitforvisualfinish
 	launchtask AnimTask_ShakeMon_2 0x2 0x5 0x1 0x4 0x0 0x8 0x1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x10 0x0 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x10 0x0 0x0 @;Black
 	waitforvisualfinish
 	end
 	
@@ -15945,7 +15945,7 @@ Move_JAW_LOCK:
 	loadspritegfx ANIM_TAG_IMPACT
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_SHARP_TEETH 0x0 0xA 0xA 0x0B1D @;Light orange
 	monbg ANIM_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x7 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x7 0x0 @;Black
 	waitforvisualfinish
 	playsewithpan SE_M_BITE SOUND_PAN_TARGET 
 	launchtemplate LOCKED_JAW 0x2 0x7 0xffe0 0xffe0 0x1 0x333 0x333 0xa 15
@@ -15954,7 +15954,7 @@ Move_JAW_LOCK:
 	launchtemplate gBasicHitSplatSpriteTemplate 0x2 0x4 0xfff8 0x0 0x1 0x1 
 	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_TARGET 0x0 0x7 0xA 0x2  
 	waitforvisualfinish 
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x7 0x0 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x7 0x0 0x0 @;Black
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	delay 0x1
@@ -16463,7 +16463,7 @@ Move_PYRO_BALL:
 	playsewithpan SE_LEDGE SOUND_PAN_ATTACKER @;Hop
 	delay 0x19
 	playsewithpan SE_M_FLAME_WHEEL SOUND_PAN_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x3 0x0 0x7 0x043D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x3 0x0 0x7 0x043D
 	launchtemplate PYRO_BALL_BURNING_ROCK, TEMPLATE_ATTACKER | 2, 0x3, 0, 0, 0
 	delay 0x19
 	playsewithpan SE_M_FLAME_WHEEL SOUND_PAN_TARGET
@@ -16478,7 +16478,7 @@ Move_PYRO_BALL:
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x3 0xf 0x1
 	call BURN_CHANCE_ANIM
 	delay 0x20
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x7 0x0 0x043D
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x7 0x0 0x043D
 	waitforvisualfinish
 	end
 
@@ -16496,7 +16496,7 @@ Move_BEHEMOTH_BLADE:
 	loadspritegfx ANIM_TAG_SWORD @Sword
 	loadspritegfx ANIM_TAG_HYDRO_PUMP @Blue Colour
 	loadspritegfx ANIM_TAG_EXPLOSION
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0x10 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0x10 0x0 @;Black
 	monbg ANIM_ATTACKER
 	setalpha 12, 8
 	playsewithpan SE_M_SWORDS_DANCE SOUND_PAN_ATTACKER
@@ -16515,12 +16515,12 @@ BEHEMOTH_BLADE_REJOIN:
 	blendoff
 	launchtemplate BEHEMOTH_BLADE_CUT 0x2 0x3, 0x3C, -0x30, 0x0
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK | PAL_ATK_PARTNER | PAL_DEF_PARTNER | PAL_BG 0x1 0x10 0x10 0x7FFF @;Screen flash white
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK | PAL_ATK_PARTNER | PAL_DEF_PARTNER | ANIM_PAL_BG 0x1 0x10 0x10 0x7FFF @;Screen flash white
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x5 0x20 0x1
 	call LARGE_EXPLOSION
 	call LARGE_EXPLOSION
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK | PAL_ATK_PARTNER | PAL_DEF_PARTNER | PAL_BG 0x1 0x10 0x0 0x7FFF @;Screen revert from white
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK | PAL_ATK_PARTNER | PAL_DEF_PARTNER | ANIM_PAL_BG 0x1 0x10 0x0 0x7FFF @;Screen revert from white
 	clearmonbg ANIM_TARGET
 	blendoff
 	end
@@ -16574,7 +16574,7 @@ Move_BEHEMOTH_BASH:
 	loadspritegfx ANIM_TAG_SMALL_RED_EYE @red color
 	loadspritegfx ANIM_TAG_EXPLOSION
 	playsewithpan SE_ORB SOUND_PAN_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ATK 0x2 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ATK 0x2 0x0 0x10 0x0
 	waitforvisualfinish
 	call BEHEMOTH_BASH_BEAM
 	call BEHEMOTH_BASH_BEAM
@@ -16595,7 +16595,7 @@ Move_BEHEMOTH_BASH:
 	call LARGE_EXPLOSION
 	waitforvisualfinish
 	makebankvisible ANIM_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ATK 0x3 0x10 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ATK 0x3 0x10 0x0 0x0
 	waitforvisualfinish
 	blendoff
 	clearmonbg ANIM_TARGET
@@ -17041,13 +17041,13 @@ Move_METEOR_ASSAULT:
 	launchtemplate GROWING_SUPERPOWER, ANIMSPRITE_IS_TARGET | 3, 0x1 0x0
 	playsewithpan SE_M_SWAGGER SOUND_PAN_ATTACKER
 	delay 0xF
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK | PAL_BG 0x1 0x10 0x10 0x7FFF @;Screen flash white
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK | ANIM_PAL_BG 0x1 0x10 0x10 0x7FFF @;Screen flash white
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x5 0x20 0x1
 	call GENERIC_EXPLOSION
 	call GENERIC_EXPLOSION
 	waitforvisualfinish
 	makebankvisible ANIM_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK | PAL_BG 0x1 0x10 0x0 0x7FFF @;Screen revert from white
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK | ANIM_PAL_BG 0x1 0x10 0x0 0x7FFF @;Screen revert from white
 	waitforvisualfinish
 	end
 	
@@ -17214,7 +17214,7 @@ Move_STEEL_BEAM:
 	loadspritegfx ANIM_TAG_ELECTRIC_ORBS
 	loadspritegfx ANIM_TAG_GUST
 	loadspritegfx ANIM_TAG_SPIKES
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0x10 0x6B59 @;To gray
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0x10 0x6B59 @;To gray
 	launchtask AnimTask_ChargeBalls 0x2 0x4 ANIM_ATTACKER 0x14 0x0 0x2
 	playsewithpan SE_M_CHARGE SOUND_PAN_ATTACKER
 	delay 0x14
@@ -17241,7 +17241,7 @@ Move_STEEL_BEAM:
 	call STEEL_BEAM_SHOT
 	waitforvisualfinish
 	launchtemplate gSlideMonToOriginalPosSpriteTemplate 0x2 0x3 ANIM_TARGET 0x0 0x6
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x6B59 @;From gray
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x6B59 @;From gray
 	waitforvisualfinish
 	end
 
@@ -17561,7 +17561,7 @@ Move_RISING_VOLTAGE:
 	jumpifargmatches 0x0 1 ANIM_RISING_VOLTAGE_STRONGER
 
 @ANIM_RISING_VOLTAGE_NORMAL:
-	launchtask AnimTask_pal_fade 0x2 0x5 PAL_BG 0x1 0x0 0x4 0x0 @;To black
+	launchtask AnimTask_pal_fade 0x2 0x5 ANIM_PAL_BG 0x1 0x0 0x4 0x0 @;To black
 	waitforvisualfinish 
 	launchtask AnimTask_ChargeBalls 0x2 0x4 ANIM_ATTACKER 30 0 3 @;Amount, Slowness, Compaction
 	playsewithpan SE_M_CHARGE SOUND_PAN_ATTACKER
@@ -17579,13 +17579,13 @@ Move_RISING_VOLTAGE:
 	call SPARKSURF_SPARK_GEYSER
 	call SPARKSURF_SPARK_GEYSER
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0x2 0x5 PAL_BG 0x1 0x4 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0x2 0x5 ANIM_PAL_BG 0x1 0x4 0x0 0x0 @;From black
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	end
 
 Move_RISING_VOLTAGE_STRONGER:
-	launchtask AnimTask_pal_fade 0x2 0x5 PAL_BG 0x1 0x0 0xC 0x0 @;To black
+	launchtask AnimTask_pal_fade 0x2 0x5 ANIM_PAL_BG 0x1 0x0 0xC 0x0 @;To black
 	waitforvisualfinish 
 	launchtask AnimTask_ChargeBalls 0x2 0x4 ANIM_ATTACKER 55 0 0 @;Amount, Slowness, Compaction
 	playsewithpan SE_M_CHARGE SOUND_PAN_ATTACKER
@@ -17617,7 +17617,7 @@ Move_RISING_VOLTAGE_STRONGER:
 	call SPARKSURF_SPARK_GEYSER
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x079D @;From Yellow
-	launchtask AnimTask_pal_fade 0x2 0x5 PAL_BG 0x1 0xC 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0x2 0x5 ANIM_PAL_BG 0x1 0xC 0x0 0x0 @;From black
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	end
@@ -17688,7 +17688,7 @@ Move_TERRAIN_PULSE_PSYCHIC:
 Move_SKITTER_SMACK:
 	loadspritegfx ANIM_TAG_IMPACT
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_IMPACT 0x0 0x9 0x9 0x3FB5 @;Light green
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;To Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;To Black
 	setarg 0x7 0x0 @;Clear arg 7 so task works properly in Link battles
 	launchtask AnimTask_SkitterBehindOpposingMon 0x2 0x0
 SKITTER_SMACK_LOOP:
@@ -17706,7 +17706,7 @@ SKITTER_SMACK_LOOP:
 	delay 0x4
 	launchtemplate ORDER_HITS ANIMSPRITE_IS_TARGET | 2, 0x3, 0x11 0xfff4 0x0
 	playsewithpan SE_M_DOUBLE_SLAP SOUND_PAN_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;To Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;To Black
 	waitforvisualfinish
 	end
 
@@ -17823,7 +17823,7 @@ Move_POLTERGEIST:
 	loadspritegfx ANIM_TAG_WHITE_SHADOW
 	loadspritegfx ANIM_TAG_QUICK_GUARD_HAND @Black Colour
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_ORBS 0x0 0xA 0xA 0x7D74 @;Pinkish Purple
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0x0 0xA 0x4022 @;To Purple
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x2 0x0 0xA 0x4022 @;To Purple
 	playsewithpan SE_M_NIGHTMARE SOUND_PAN_ATTACKER
 	call GHOST_SWIRL
 	call RECOVER_LOAD_PARTICLES
@@ -17852,7 +17852,7 @@ Move_POLTERGEIST:
 	playsewithpan SE_M_DOUBLE_SLAP SOUND_PAN_TARGET
 	delay 0x4
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xA 0x0 0x4022 @;From Purple
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xA 0x0 0x4022 @;From Purple
 	unloadparticle ANIM_TAG_ITEM_BAG @;The generated item sprite uses this tag
 	end
 
@@ -18288,7 +18288,7 @@ Move_THUNDEROUS_KICK:
 	playsewithpan SE_M_MEGA_KICK2 SOUND_PAN_TARGET
 	launchtemplate gBasicHitSplatSpriteTemplate 0x2 0x4 0x0 0x0 0x1 0x0 
 	launchtask AnimTask_ShakeMon_2 0x2 0x5 ANIM_TARGET 0x4 0x0 0x16 0x1
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x10 0x0 0x7fff 
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x10 0x0 0x7fff 
 	launchtemplate Template_ComplexPaletteBlend 0x2 0x7 0x1f 0x3 0x1 0x0 0x8 0x0 0x0 
 	waitforvisualfinish
 	launchtemplate gSlideMonToOriginalPosSpriteTemplate 0x2 0x3 ANIM_ATTACKER 0x0 0x5
@@ -18304,7 +18304,7 @@ Move_FIERY_WRATH:
 	loadspritegfx ANIM_TAG_SMALL_EMBER
 	loadspritegfx ANIM_TAG_PURPLE_RING
 	playsewithpan SE_M_SACRED_FIRE2 0xc0
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0x0 0xE 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x2 0x0 0xE 0x0
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x4 0x0 0x8 0x1F @Red
 	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_ATTACKER 0x0 0x2 0x20 0x1 
 	call DRAGON_CLAW_FIRE_SPIRAL
@@ -18321,7 +18321,7 @@ Move_FIERY_WRATH:
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x2 0x8 0x0 0x1F
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF | PAL_DEF_PARTNER 0x2 0x9 0x0 0x3006
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0
 	waitforvisualfinish
 	end
 
@@ -18543,7 +18543,7 @@ Move_GLACIAL_LANCE:
 	loadspritegfx ANIM_TAG_ICICLE_SPEAR
 	loadspritegfx ANIM_TAG_ICE_CUBE
 	loadspritegfx ANIM_TAG_ICE_CRYSTALS @ice
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xA 0x3C00 @;Royal Blue
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xA 0x3C00 @;Royal Blue
 	monbg ANIM_TARGET
 	playsewithpan SE_M_HAIL SOUND_PAN_TARGET
 	launchtask AnimTask_CentredFrozenIceCube ANIMSPRITE_IS_TARGET | 2, 0x0
@@ -18558,7 +18558,7 @@ Move_GLACIAL_LANCE:
 	delay 4
 	call FREEZE_CHANCE_ANIM_DOUBLES
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0xA 0x0 0x3C00 @;Royal Blue
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0xA 0x0 0x3C00 @;Royal Blue
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	end
@@ -18741,7 +18741,7 @@ MYSTICAL_POWER_FOE_RING: objtemplate ANIM_TAG_THIN_RING ANIM_TAG_HYDRO_PUMP OAM_
 Move_RAGING_FURY:
 	loadspritegfx ANIM_TAG_SMALL_EMBER
 	loopsewithpan 0xa4 SOUND_PAN_ATTACKER 0x8 0x3
-	launchtask AnimTask_pal_fade_complex 0x2 0x6 PAL_BG | PAL_ATK | ANIM_PAL_DEF 0x2 0x5 0x3 0x8 0x1f @;Red
+	launchtask AnimTask_pal_fade_complex 0x2 0x6 ANIM_PAL_BG | PAL_ATK | ANIM_PAL_DEF 0x2 0x5 0x3 0x8 0x1f @;Red
 	launchtask AnimTask_WindUpLunge 0x5 0x7 ANIM_ATTACKER 0xffec 0x8 0x20 0x8 0x38 0x6
 	call OUTRAGE_FLAMES 
 	call OUTRAGE_FLAMES
@@ -18786,7 +18786,7 @@ Move_CHLOROBLAST:
 	loadspritegfx ANIM_TAG_HYDRO_PUMP
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_THIN_RING 0x0 0xA 0xA CHLOROBLAST_FADE_COLOUR
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_HYDRO_PUMP 0x0 0xC 0xC CHLOROBLAST_FADE_COLOUR
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0x0 0x10 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x2 0x0 0x10 0x0 @;Black
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x2 0x0 0x10 CHLOROBLAST_FADE_COLOUR
 	launchtask AnimTask_BlendNonAttackerPalettes 0x2 0x4 0x2 0x0 0x10 0x0 @;Black
 	playsewithpan SE_M_MEGA_KICK SOUND_PAN_ATTACKER
@@ -19167,7 +19167,7 @@ Move_CEASELESS_EDGE:
 	playsewithpan SE_M_JUMP_KICK SOUND_PAN_ATTACKER
 	launchtemplate gSlideMonToOffsetSpriteTemplate TEMPLATE_ATTACKER | 2, 0x5 ANIM_ATTACKER 0x2C 0x0 0x0 0x5
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x10 0x10 0x1F @;Fully to Red
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x10 0x10 0x1F @;Fully to Red
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK | ANIM_PAL_DEF 0x0 0x10 0x10 0x0 @;Fully to Black
 	launchtask AnimTask_AllBanksInvisibleExceptAttackerAndTarget 0xa 0x0
 	delay 0x10
@@ -19389,7 +19389,7 @@ Move_LUNAR_BLESSING:
 	loadspritegfx ANIM_TAG_BLUE_STAR
 	monbg side_attacker
 	setalpha 0x1000
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x0
 	launchtask AnimTask_BlendNonAttackerPalettes 0x2 0x4 0x1 0x0 0x10 0x0 
 	waitforvisualfinish
 	launchtemplate Template_Moon TEMPLATE_ATTACKER | 2, 0x2 0x78 0x38
@@ -20170,7 +20170,7 @@ Move_SAVAGE_SPIN_OUT:
 	loadspritegfx ANIM_TAG_STRING @string shot
 	loadspritegfx ANIM_TAG_SPIDER_WEB @spider web
 	loadspritegfx ANIM_TAG_MUD_SAND @rocks
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x4 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x4 0x0
 	launchtask AnimTask_FadeOutAllBanksExceptAttackerAndTarget 0xA 0x0
 	waitforvisualfinish
 	launchtask AnimTask_SingleBankToBg 0xA 0x1 ANIM_ATTACKER
@@ -20184,7 +20184,7 @@ Move_SAVAGE_SPIN_OUT:
 	delay 0xf
 	playsewithpan SE_M_CHARGE SOUND_PAN_ATTACKER
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x4 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x4 0x0 0x0
 	waitforvisualfinish
 	launchtask AnimTask_SingleBankFromBg 0xA 0x1 ANIM_ATTACKER
 	waitforvisualfinish
@@ -20261,7 +20261,7 @@ Move_SAVAGE_SPIN_OUT:
 	delay 0x6
 	playsewithpan SE_M_EXPLOSION SOUND_PAN_TARGET
 	launchtemplate SPINOUT_WHITE_EXPLODE 0x83 0x4 0xffe8 0xfff4 ANIM_TARGET 0x1
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | PAL_BG 0x1 0x0 0x10 0x7FFF	@White
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | ANIM_PAL_BG 0x1 0x0 0x10 0x7FFF	@White
 	delay 0x6
 	playsewithpan SE_M_EXPLOSION SOUND_PAN_TARGET
 	launchtemplate SPINOUT_WHITE_EXPLODE 0x83 0x4 0x10 0x10 ANIM_TARGET 0x1
@@ -20638,7 +20638,7 @@ FINISH_CORKSCREW:
 	call CORKSCREW_ROCKS_SPRAY
 	delay 0x6
 	call CORKSCREW_ROCKS_SPRAY
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | PAL_BG 0x2 0x0 0x10 0x7fff
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | ANIM_PAL_BG 0x2 0x0 0x10 0x7fff
 	waitforvisualfinish
 	delay 0x10
 	call RESET_FROM_WHITE_SCREEN
@@ -20752,7 +20752,7 @@ Move_INFERNO_OVERDRIVE:
 	call IO_EXPLOSION
 	delay 0x6
 	call IO_EXPLOSION
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | PAL_BG 0x1 0x0 0x10 0x001b	@ red bg pal
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | ANIM_PAL_BG 0x1 0x0 0x10 0x001b	@ red bg pal
 	delay 0x6
 	call IO_EXPLOSION
 	waitforvisualfinish
@@ -20960,7 +20960,7 @@ Move_BLOOM_DOOM:
 	launchtask AnimTask_SingleBankToBg 0xA 0x1 ANIM_ATTACKER
 	waitforvisualfinish
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x4 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x4 0x0
 	loopsewithpan 0x5F SOUND_PAN_ATTACKER 0x9 0x3
 	launchtemplate BD_GREEN_CHARGE 0x2 0x1 0x0
 	delay 0x3C
@@ -20982,7 +20982,7 @@ Move_BLOOM_DOOM:
 	launchtemplate BD_PETAL_SPIN 0x3 0x4 0x0 0x0 0x38 0x18
 	playsewithpan SE_M_ATTRACT SOUND_PAN_ATTACKER
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x4 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x4 0x0 0x0
 	waitforvisualfinish
 	unloadparticle ANIM_TAG_CIRCLE_OF_LIGHT
 	call BD_GREEN_HURRICANE_USER
@@ -21072,7 +21072,7 @@ BLOOM_DOOM_END:
 	end
 
 BLOOM_DOOM_SCREEN_FADE_TARGET_PARTNER:
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ATK | PAL_OPPONENT1 | PAL_OPPONENT2 0x1 0x0 0x10 0x33ed	@ green bg pal
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ATK | PAL_OPPONENT1 | PAL_OPPONENT2 0x1 0x0 0x10 0x33ed	@ green bg pal
 	goto BLOOM_DOOM_END
 
 BD_GREEN_HURRICANE_USER:
@@ -21146,7 +21146,7 @@ RESET_FROM_GREEN_SCREEN:
 	waitbgfadein
 	waitforvisualfinish
 	delay 0x5
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x0 0x33ED
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x0 0x33ED
 	waitforvisualfinish
 	return
 
@@ -21211,7 +21211,7 @@ Move_GIGAVOLT_HAVOC:
 	launchtask AnimTask_FadeOutAllBanksExceptAttackerAndTarget 0xA 0x0
 	waitforvisualfinish
 	blendoff
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x6 0x0 0x10 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x6 0x0 0x10 0x0 @;Black
 	playsewithpan SE_M_THUNDERBOLT2 SOUND_PAN_ATTACKER
 	launchtemplate Template_ElectricSparkPlayer 0x0 0x7 0x20 0x18 0xbe 0xc 0x0 0x1 0x0
 	launchtemplate Template_ElectricSparkPlayer 0x0 0x7 0x50 0x18 0x16 0xc 0x0 0x1 0x0
@@ -21358,7 +21358,7 @@ Move_GIGAVOLT_HAVOC:
 	waitforvisualfinish
 	launchtask AnimTask_SingleBankFromBg 0xA 0x1 ANIM_ATTACKER
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x0
 	launchtask AnimTask_AllBanksVisible 0xa 0x0
 	waitforvisualfinish
 	blendoff
@@ -21869,11 +21869,11 @@ DRAKE_REJOIN:
 	end
 
 DRAKE_SCREEN_FADE_TARGET_PARTNER:
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ATK | PAL_OPPONENT1 | PAL_OPPONENT2 0x6 0x0 0x10 0x40c0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ATK | PAL_OPPONENT1 | PAL_OPPONENT2 0x6 0x0 0x10 0x40c0
 	call DRAKE_EXPLOSION
 	waitforvisualfinish
 	playsewithpan SE_M_DRAGON_RAGE SOUND_PAN_TARGET
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ATK | PAL_OPPONENT1 | PAL_OPPONENT2 0x0 0x10 0x0 0x40c0	@ fade all but target back
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ATK | PAL_OPPONENT1 | PAL_OPPONENT2 0x0 0x10 0x0 0x40c0	@ fade all but target back
 	goto DRAKE_REJOIN
 
 DRAKE_PURPLE_BUFF:
@@ -22026,7 +22026,7 @@ Move_BLACK_HOLE_ECLIPSE:
 	delay 0x8
 	waitforvisualfinish
 	stopsound
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x07 0x0000
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x07 0x0000
 	loadspritegfx ANIM_TAG_WISP_ORB @will o wisp
 	makebankinvisible ANIM_ATTACKER
 	loopsewithpan 0x8b SOUND_PAN_ATTACKER 0x10 0x5
@@ -22088,7 +22088,7 @@ Move_BLACK_HOLE_ECLIPSE:
 	unloadparticle ANIM_TAG_BLACK_BALL_2
 	loadspritegfx ANIM_TAG_UNUSED_EXPLOSION_2
 	call BHE_EXPLODE
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | PAL_BG 0x1 0x0 0x10 0x7fff	@ bg to white pal
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | ANIM_PAL_BG 0x1 0x0 0x10 0x7fff	@ bg to white pal
 	call BHE_EXPLODE
 	waitforvisualfinish
 	delay 0x18
@@ -22485,7 +22485,7 @@ FINISH_CATASTROPIKA:
 	launchtemplate Template_SparkElectricityFlashing ANIMSPRITE_IS_TARGET | 4, 0x8 0x0 0x0 0x40 0x2c 0x80 0x28 0x0 0x8003
 	launchtemplate Template_SparkElectricityFlashing ANIMSPRITE_IS_TARGET | 4, 0x8 0x0 0x0 0x40 0x2c SOUND_PAN_ATTACKER 0x28 0x2 0x8003
 	call CPIKA_THUNDERING
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | PAL_BG 0x4 0x0 0x10 0x7fff @ bg to white
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | ANIM_PAL_BG 0x4 0x0 0x10 0x7fff @ bg to white
 	launchtemplate Template_SparkElectricityFlashing ANIMSPRITE_IS_TARGET | 4, 0x8 0x0 0x0 0x35 0x2c 0x0 0x28 0x0 0x8003
 	launchtemplate Template_SparkElectricityFlashing ANIMSPRITE_IS_TARGET | 4, 0x8 0x0 0x0 0x35 0x2c 0x40 0x28 0x1 0x8003
 	launchtemplate Template_SparkElectricityFlashing ANIMSPRITE_IS_TARGET | 4, 0x8 0x0 0x0 0x35 0x2c 0x80 0x28 0x0 0x8003
@@ -22704,11 +22704,11 @@ Move_10000000_VOLT_THUNDERBOLT:
 	launchtemplate Template_SparkElectricityFlashing ANIMSPRITE_IS_TARGET | 4, 0x8 0x0 0x0 0x37 0x2c 0x40 0x28 0x1 0x8003
 	launchtemplate Template_SparkElectricityFlashing ANIMSPRITE_IS_TARGET | 4, 0x8 0x0 0x0 0x37 0x2c 0x80 0x28 0x0 0x8003
 	launchtemplate Template_SparkElectricityFlashing ANIMSPRITE_IS_TARGET | 4, 0x8 0x0 0x00 0x37 0x2c 0xC0 0x28 0x2 0x8003
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ALL_BANKS 0x2 0x0 0x10 0x7fff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ALL_BANKS 0x2 0x0 0x10 0x7fff
 	call TENE6_SPARK_GEYSER
 	waitforvisualfinish
 	delay 0x10
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ALL_BANKS 0x3 0x10 0x0 0x7fff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ALL_BANKS 0x3 0x10 0x0 0x7fff
 	launchtask AnimTask_AllBanksVisible 0xA 0x0
 	waitforvisualfinish
 	end
@@ -22970,7 +22970,7 @@ SPARKSURF_YELLOW_FLY: objtemplate ANIM_TAG_ROUND_SHADOW ANIM_TAG_SPARK_2 OAM_DOU
 @Credits to ghoulslash
 Move_EXTREME_EVOBOOST:
 	loadspritegfx ANIM_TAG_LEER @leer
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ALL_BANKS 0x3 0x0 0x10 0x0000
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ALL_BANKS 0x3 0x0 0x10 0x0000
 	waitforvisualfinish
 	launchtask AnimTask_AllBanksInvisible 0xA 0x0
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x3 0x0 0x0 0x0 @;Remove fading on everyone
@@ -23049,7 +23049,7 @@ Move_EXTREME_EVOBOOST:
 	waitforvisualfinish
 	playsewithpan SE_SHINY SOUND_PAN_ATTACKER
 	delay 0x5
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK | PAL_BG 0x0 0x0 0x10 0x7fff
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK | ANIM_PAL_BG 0x0 0x0 0x10 0x7fff
 	delay 0x18
 	call RESET_FROM_WHITE_SCREEN
 	end
@@ -23214,7 +23214,7 @@ CONTINUE_PULVERIZE:
 	delay 0x5
 	loadspritegfx ANIM_TAG_EXPLOSION @explosion
 	call PANCAKE_EXPLODE
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ALL_BANKS 0x2 0x0 0x10 0x7fff	@ everything goes white
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ALL_BANKS 0x2 0x0 0x10 0x7fff	@ everything goes white
 	call PANCAKE_EXPLODE
 	waitforvisualfinish
 	call RESET_FROM_WHITE_SCREEN
@@ -23355,7 +23355,7 @@ Move_GENESIS_SUPERNOVA:
 	delay 0x0
 	launchtask AnimTask_SingleBankFromBg 0xA 0x1 ANIM_ATTACKER
 	call GENESIS_BUBBLE_EXPLODE
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ALL_BANKS 0x3 0x0 0x10 0x7fff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ALL_BANKS 0x3 0x0 0x10 0x7fff
 	call GENESIS_BUBBLE_EXPLODE
 	waitforvisualfinish
 	call RESET_FROM_WHITE_SCREEN
@@ -23604,7 +23604,7 @@ SAR_RAID_ON_PLAYER:
 SAR_FINISH_RAID:
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF | PAL_ATK_PARTNER | PAL_DEF_PARTNER 0x4 0x10 0x0 0x40c0	@ return tgt to normal
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x00 0x388C @ bg to nrml
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x00 0x388C @ bg to nrml
 	delay 0x5
 	launchtask AnimTask_AllBanksVisible 0xA 0x0
 	waitforvisualfinish
@@ -23874,7 +23874,7 @@ Move_MALICIOUS_MOONSAULT:
 	call MOONSAULT_EXPLOSION
 	delay 0x6
 	call MOONSAULT_EXPLOSION
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ALL_BANKS 0x1 0x0 0x10 0x001b	@ fade all to red
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ALL_BANKS 0x1 0x0 0x10 0x001b	@ fade all to red
 	delay 0x6
 	call MOONSAULT_EXPLOSION
 	launchtemplate gSlideMonToOriginalPosSpriteTemplate ANIMSPRITE_IS_TARGET | 2, 0x3 ANIM_TARGET 0x0 0x10
@@ -23988,7 +23988,7 @@ Move_OCEANIC_OPERETTA:
 	waitforvisualfinish
 	launchtask AnimTask_RemoveSpotlight 0x2 0x0
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x6 0x5da0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x6 0x5da0
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
 	loadspritegfx ANIM_TAG_THIN_RING
 	launchtemplate OPERA_BLUE_CHARGE TEMPLATE_ATTACKER | 2, 0x1 0x0 	@charge
@@ -24112,7 +24112,7 @@ Move_OCEANIC_OPERETTA:
 	launchtask AnimTask_CreateRaindrops 0x2 0x3 0x0 0x3 0x78
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0x2 0x5 ANIM_PAL_DEF 0x2 0xb 0x0 0x5da0
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x6 0x0 0x5da0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x6 0x0 0x5da0
 	waitforvisualfinish
 	launchtask AnimTask_AllBanksVisible 0xA 0x0
 	waitforvisualfinish
@@ -24206,10 +24206,10 @@ Move_SPLINTERED_STORMSHARDS:
 	launchtask AnimTask_GetLycanrocForm 0x2 0x0
 	jumpifargmatches 0x0 0x1 SPLINTER_NIGHT_FORME
 SPLINTER_DAY_FORME:
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xc 0x5bff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xc 0x5bff
 	goto SPLINTER_FINISH_FADE
 SPLINTER_NIGHT_FORME:
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xc 0x0000
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xc 0x0000
 SPLINTER_FINISH_FADE:
 	waitforvisualfinish
 	setalpha 12, 8
@@ -24259,11 +24259,11 @@ SPLINTERED_BY_PLAYER:
 	call SPLINTER_BROWN_EXPLOSION_ROCKS_ONOPPONENT
 
 END_SPLINTERED:
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ALL_BANKS 0x4 0x0 0x10 0x7fff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ALL_BANKS 0x4 0x0 0x10 0x7fff
 	call SPLINTER_BROWN_EXPLOSION
 	waitforvisualfinish
 	launchtask AnimTask_AllBanksVisible 0xA 0x0
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ALL_BANKS 0x4 0x10 0x0 0x7fff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ALL_BANKS 0x4 0x10 0x0 0x7fff
 	waitforvisualfinish
 	end
 
@@ -24331,10 +24331,10 @@ SPLINTER_FIX_BG_FADE:
 	launchtask AnimTask_GetLycanrocForm 0x2 0x0
 	jumpifargmatches 0x0 0x1 SPLINTER_NIGHT_FORME_RETURN
 SPLINTER_DAY_FORME_RETURN:
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xc 0x0 0x5bff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xc 0x0 0x5bff
 	goto SPLINTER_FINISH_FADE_RETURN
 SPLINTER_NIGHT_FORME_RETURN:
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xc 0x0 0x0000
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xc 0x0 0x0000
 SPLINTER_FINISH_FADE_RETURN:
 	return
 
@@ -24541,7 +24541,7 @@ Move_LETS_SNUGGLE_FOREVER:
 	delay 0x8
 	call SNUGGLE_TEARS
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ALL_BANKS 0x2 0x0 0x10 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ALL_BANKS 0x2 0x0 0x10 0x0
 	waitforvisualfinish
 	loadspritegfx ANIM_TAG_SPARKLE_4 @detect
 	playsewithpan SE_M_DETECT SOUND_PAN_ATTACKER
@@ -24575,7 +24575,7 @@ Move_LETS_SNUGGLE_FOREVER:
 	call SNUGGLE_HITS
 	call SNUGGLE_STARS_1
 	delay 0x0
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0x0 0x10 0x7fff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x2 0x0 0x10 0x7fff
 	playsewithpan SE_M_FLAMETHROWER SOUND_PAN_TARGET
 	call SNUGGLE_STARS_2
 	delay 0x0
@@ -24682,7 +24682,7 @@ Move_CLANGOROUS_SOULBLAZE:
 	unloadparticle ANIM_TAG_HORSESHOE_SIDE_FIST
 	unloadparticle ANIM_TAG_SPARKLE_2 @stars
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x4 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x4 0x0
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT @charge
 	makebankvisible ANIM_ATTACKER
 	launchtask AnimTask_SingleBankToBg 0xA 0x1 ANIM_ATTACKER
@@ -24780,7 +24780,7 @@ FINISH_SOULBLAZE:
 	call SOULBLAZE_EXPLOSION_4
 	call SOULBLAZE_PULSE2
 	delay 0x5
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | PAL_BG 0x4 0x0 0x10 0x7fff
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | ANIM_PAL_BG 0x4 0x0 0x10 0x7fff
 	call SOULBLAZE_EXPLOSION_5
 	call SOULBLAZE_PULSE3
 	delay 0x5
@@ -24939,7 +24939,7 @@ RESET_FROM_WHITE_SCREEN:
 	waitbgfadein
 	waitforvisualfinish
 	delay 0x5
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0x0 0x7fff
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0x0 0x7fff
 	waitforvisualfinish
 	return
 
@@ -25071,7 +25071,7 @@ Move_SEARING_SUNRAZE_SMASH:
 	waitforvisualfinish
 	makebankinvisible ANIM_TARGET
 	blendoff
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0xe 0x001b
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0xe 0x001b
 	playsewithpan SE_M_DRAGON_RAGE SOUND_PAN_ATTACKER
 	call SUNRAZE_FLARE
 	delay 0x8
@@ -25136,7 +25136,7 @@ Move_SEARING_SUNRAZE_SMASH:
 	loadspritegfx ANIM_TAG_ROUND_SHADOW @fly
 	playsewithpan SE_M_DOUBLE_TEAM SOUND_PAN_ATTACKER
 	launchtemplate SUNRAZE_REDFLY 0x2 0x4 0x0 0x0 0xd 0x150
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG+PAL_ATK 0x3 0x0 0xF 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG+PAL_ATK 0x3 0x0 0xF 0x0
 	waitforvisualfinish
 	playsoundpanchange 0x64 SOUND_PAN_ATTACKER SOUND_PAN_TARGET 0x2 0x0
 	unloadparticle ANIM_TAG_ROUND_SHADOW @fly
@@ -25191,7 +25191,7 @@ SUNRAZE_IMPACT:
 	launchtemplate SUNRAZE_X ANIMSPRITE_IS_TARGET | 2, 0x4, 0x0 0x0 0x1 0x24
 	playsewithpan SE_M_LEER SOUND_PAN_TARGET
 	makebankvisible ANIM_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ATK 0x3 0xF 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ATK 0x3 0xF 0x0 0x0
 	makebankvisible ANIM_ATTACKER
 	playsewithpan SE_M_MEGA_KICK SOUND_PAN_TARGET
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x2 0x0 0x10 0x0000
@@ -25204,7 +25204,7 @@ SUNRAZE_IMPACT:
 	call SUNRAZE_INFERNO
 	call SUNRAZE_INFERNO
 	call SUNRAZE_INFERNO
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | PAL_BG 0x4 0x0 0x10 0x001b	@full red
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | ANIM_PAL_BG 0x4 0x0 0x10 0x001b	@full red
 	call SUNRAZE_INFERNO
 	call SUNRAZE_INFERNO
 	call SUNRAZE_INFERNO
@@ -25294,7 +25294,7 @@ RESET_FROM_RED_SCREEN:
 	setarg 0x7 0xffff
 	launchtask AnimTask_AllBanksVisible 0xA 0x0
 	waitbgfadein
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0x0 0x33ED
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0x0 0x33ED
 	waitforvisualfinish
 	return
 
@@ -25327,7 +25327,7 @@ Move_MENACING_MOONRAZE_MAELSTROM:
 	waitforvisualfinish
 	makebankinvisible ANIM_TARGET
 	blendoff
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0xe 0x40c0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0xe 0x40c0
 	playsewithpan SE_M_DRAGON_RAGE SOUND_PAN_ATTACKER
 	call MOONRAZE_FLARE
 	delay 0x8
@@ -25556,7 +25556,7 @@ Move_LIGHT_THAT_BURNS_THE_SKY:
 	delay 0x1
 	unloadparticle ANIM_TAG_FOCUS_ENERGY
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF | PAL_BG 0x2 0x0 0xF 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF | ANIM_PAL_BG 0x2 0x0 0xF 0x0
 	waitforvisualfinish
 	launchtask AnimTask_ChargeBalls 0x2 0x4 ANIM_ATTACKER 0x3c 0x2 0xc 	@ charge particles to attacker
 	delay 0x1e
@@ -25705,7 +25705,7 @@ RESET_FROM_YELLOW_SCREEN:
 	setarg 0x7 0xffff
 	launchtask AnimTask_AllBanksVisible 0xA 0x0
 	waitbgfadein
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0x0 0x43FF
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0x0 0x43FF
 	waitforvisualfinish
 	return
 
@@ -25831,12 +25831,12 @@ Move_SOUL_STEALING_7_STAR_STRIKE:
 	launchtask AnimTask_screen_shake 0x5 0x3 ANIM_TARGET 0x8 0x20
 	call SOULSTEAL_EXPLODE
 	call SOULSTEAL_EXPLODE
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ATK 0x2 0x0 0x10 0x0 @everything to black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ATK 0x2 0x0 0x10 0x0 @everything to black
 	call SOULSTEAL_EXPLODE
 	waitforvisualfinish
 	blendoff
 	restorebg
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ALL_BANKS 0x2 0x10 0x0 0x0 @everything from black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ALL_BANKS 0x2 0x10 0x0 0x0 @everything from black
 	launchtask AnimTask_AllBanksVisible 0xA 0x0
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x2 0x0 0x0 0x0
@@ -25924,7 +25924,7 @@ Move_MAX_FLARE:
 	monbg ANIM_TARGET
 	splitbgprio ANIM_TARGET
 	playsewithpan SE_M_MEGA_KICK SOUND_PAN_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_FLASH_CANNON_BALL 0x0 0xF 0xF 0x057C @;Red
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_SHARP_TEETH 0x0 0xF 0xF 0x01DD @;Orange
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_ACUPRESSURE_FINGER 0x0 0xF 0xF 0x063C @;Yellow
@@ -25954,7 +25954,7 @@ Move_MAX_FLARE:
 	call MAX_FLARE_GEYSER
 	call MAX_FLARE_GEYSER
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x0 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x0 0x0 @;Black
 	call UNSET_SCROLLING_BG
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
@@ -26031,7 +26031,7 @@ Move_MAX_FLUTTERBY:
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_EXPLOSION 0x0 0xA 0xA 0x3FB5 @;Light green
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_UNUSED_EXPLOSION_2 0x0 0xA 0xA 0x33D5 @;Light green
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_CIRCLE_OF_LIGHT 0x0 0xC 0xC 0x33D5 @;Light green
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	launchtemplate BUTTERFLY ANIMSPRITE_IS_TARGET | 2, 0x3, -30, -30, -20 @;Top left
 	launchtemplate BUTTERFLY ANIMSPRITE_IS_TARGET | 2, 0x3, -30,  10,  20 @;Bottom left
@@ -26058,7 +26058,7 @@ Move_MAX_FLUTTERBY:
 	call FLUTTERBY_CLOUD_EXPLOSION
 	call FLUTTERBY_CLOUD_EXPLOSION
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	waitforvisualfinish
 	end
 
@@ -26139,13 +26139,13 @@ Move_MAX_LIGHTNING_BEGIN:
 	launchtemplate UNUSED_LIGHTNING ANIMSPRITE_IS_TARGET | 2, 0x2 0x0, 16
 	delay 0x5
 	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_TARGET 0x0 0x4 0x4f 0x1
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | PAL_BG 0x1 0x10 0x10 0x17BF @;Yellow
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | ANIM_PAL_BG 0x1 0x10 0x10 0x17BF @;Yellow
 	delay 0x5
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | PAL_BG 0x1 0x0 0x0 0x17BF @;From Yellow
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | ANIM_PAL_BG 0x1 0x0 0x0 0x17BF @;From Yellow
 	delay 0x5
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | PAL_BG 0x1 0x10 0x10 0x17BF @;Yellow
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | ANIM_PAL_BG 0x1 0x10 0x10 0x17BF @;Yellow
 	delay 0x5
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | PAL_BG 0x1 0x0 0x0 0x17BF @;From Yellow
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS | ANIM_PAL_BG 0x1 0x0 0x0 0x17BF @;From Yellow
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x0 0x10 0x17BF @;Yellow
 	call SPARKSURF_SPARK_GEYSER
 	launchtemplate Template_Lightning ANIMSPRITE_IS_TARGET | 2, 0x2, 20, -36  
@@ -26194,7 +26194,7 @@ UNUSED_LIGHTNING: objtemplate ANIM_TAG_UNUSED_LIGHTNING ANIM_TAG_UNUSED_LIGHTNIN
 Move_MAX_STRIKE:
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
 	loadspritegfx ANIM_TAG_UNUSED_EXPLOSION_2
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	call MAX_STRIKE_SCREEN_SHAKE
 	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_TARGET 0x0 0x4 0x34 0x1
@@ -26204,7 +26204,7 @@ Move_MAX_STRIKE:
 	call EXPLOSION_GEYSER
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x73DF @;From bright yellow
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	waitforvisualfinish
 	end
 
@@ -26230,7 +26230,7 @@ Move_MAX_KNUCKLE:
 	loadspritegfx ANIM_TAG_PUNCH_IMPACT
 	loadspritegfx ANIM_TAG_UNUSED_EXPLOSION_2
 	setalpha 12, 8
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	launchtemplate MAX_KNUCKLE_USER_FIST 0x2 0x5 ANIM_ATTACKER 0x0 0x0 60 0xa
 	playsewithpan SE_M_DRAGON_RAGE SOUND_PAN_ATTACKER
@@ -26250,7 +26250,7 @@ Move_MAX_KNUCKLE:
 	call EXPLOSION_GEYSER
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x0E5F @;Orange
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;Black
 	waitforvisualfinish
 	blendoff
 	end
@@ -26312,7 +26312,7 @@ Move_MAX_PHANTASM:
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_WOOD 0x0 0xA 0xA 0x7CBF @;Pink
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_CHAIN_LINK 0x0 0xA 0xA 0x7CBF @;Pink
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_RAZOR_SHELL 0x0 0xA 0xA 0x7CBF @;Pink
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	launchtemplate PHANTASM_OBJ_1 TEMPLATE_ATTACKER | 2, 0x5, -30, -40,  30, -10, 40 @;Top left - Top Right
 	launchtemplate PHANTASM_OBJ_2 TEMPLATE_ATTACKER | 2, 0x5, -40, -10,   0, -30, 40 @;Middle left - Top
@@ -26337,7 +26337,7 @@ Move_MAX_PHANTASM:
 	call NEN_GEYSER
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x5C05 @;From royal Blue
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	waitforvisualfinish
 	end
 
@@ -26355,7 +26355,7 @@ Move_MAX_HAILSTORM:
 	loadspritegfx ANIM_TAG_ICE_ROCK
 	loadspritegfx ANIM_TAG_HAIL
 	loadspritegfx ANIM_TAG_ICE_CRYSTALS
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	waitforvisualfinish
 	monbg ANIM_DEF_PARTNER
@@ -26380,7 +26380,7 @@ MAX_HAILSTORM_REJOIN:
 	launchtemplate gSlideMonToOffsetSpriteTemplate 0x2 0x5 ANIM_TARGET 0 0x15 0x0 0x4
 	delay 0x30
 	launchtemplate gSlideMonToOriginalPosSpriteTemplate 0x2 0x3 ANIM_TARGET 0x0 0x10
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;Black
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	end
@@ -26548,7 +26548,7 @@ Move_MAX_GEYSER_BEGIN:
 	loadspritegfx ANIM_TAG_SMALL_BUBBLES
 	loadspritegfx ANIM_TAG_ICE_CRYSTALS
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	delay 0x5
 	playsewithpan SE_M_CRABHAMMER SOUND_PAN_ATTACKER
@@ -26633,7 +26633,7 @@ Move_MAX_GEYSER_BEGIN:
 	call MAX_GEYSER_EXPLOSION_BUBBLES
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	waitforvisualfinish
 	end
 
@@ -26682,7 +26682,7 @@ Move_MAX_AIRSTREAM:
 	loadspritegfx ANIM_TAG_METAL_SOUND_WAVES
 	launchtask AnimTask_GrayscaleParticle 0x5 0x1 ANIM_TAG_METAL_SOUND_WAVES
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_METAL_SOUND_WAVES 0x2 0x9 0x9 0x7FFF @;Brighten palette
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	launchtemplate AIRSTREAM_SPINNING_BLADE 0x3 0x4 0x0 0x0 0x38 0x0
 	playsewithpan SE_M_GUST2 SOUND_PAN_ATTACKER 
@@ -26722,7 +26722,7 @@ Move_MAX_AIRSTREAM:
 	call MAX_AIRSTREAM_CALL
 	call MAX_AIRSTREAM_CALL
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;Black
 	waitforvisualfinish
 	end
 
@@ -26742,7 +26742,7 @@ Move_MAX_STARFALL:
 	loadspritegfx ANIM_TAG_YELLOW_STAR
 	loadspritegfx ANIM_TAG_STRAIGHT_BEAM
 	loadspritegfx ANIM_TAG_LEER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	delay 0x20
 	call STARFALL_STAR_TWINKLE
@@ -26760,7 +26760,7 @@ DebugAnimSlot:
 	call STARFALL_TARGET_BEAM_UP
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x7A5B @;From pink
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	waitforvisualfinish
 	end
 	
@@ -26843,7 +26843,7 @@ Move_MAX_WYRMWIND:
 	delay 0x48
 	playsoundpanchange 0x7A SOUND_PAN_ATTACKER SOUND_PAN_TARGET 0x2 0x0
 	delay 0x10
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0xE 0x0 @;Black
 	playsewithpan SE_M_TWISTER SOUND_PAN_TARGET
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x4 0x48 0x1
 	delay 0xA
@@ -26861,7 +26861,7 @@ Move_MAX_WYRMWIND:
 	call HURRICANE_GUST
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x5818 @;From pink
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	end
 
 .align 2
@@ -26881,7 +26881,7 @@ Move_MAX_MINDSTORM:
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_NEEDLE 0x2 0xA 0xA 0x7FEE @;Sky blue
 	
 MAX_MINDSTORM_BEGIN:
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	launchtemplate MINDSTORM_BALL TEMPLATE_ATTACKER | 2, 0x2 0x0 0x0
 	playsewithpan SE_WARP_IN SOUND_PAN_ATTACKER
@@ -26909,7 +26909,7 @@ MAX_MINDSTORM_BEGIN:
 	call MINDSTORM_GEYSER
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x7d3d @;Purple
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	waitforvisualfinish
 	end
 
@@ -26984,7 +26984,7 @@ NEEDLE_GEYSER: objtemplate ANIM_TAG_NEEDLE ANIM_TAG_NEEDLE OAM_OFF_32x32 gDummyS
 @Credits to Skeli
 Move_MAX_ROCKFALL:
 	loadspritegfx ANIM_TAG_STONE_PILLAR
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_AllBanksInvisibleExceptAttackerAndTarget 0xA 0x0
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	loopsewithpan 0x7C SOUND_PAN_ATTACKER 0x8 0x3
@@ -27029,7 +27029,7 @@ MAX_ROCKFALL_REJOIN:
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0xB 0x0 0x0
 	waitforvisualfinish
 	launchtask AnimTask_AllBanksVisible 0xA 0x0
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;Black
 	waitforvisualfinish
 	end
 
@@ -27060,7 +27060,7 @@ Move_MAX_QUAKE:
 	loadspritegfx ANIM_TAG_MUD_SAND
 	loadspritegfx ANIM_TAG_ROCKS @ rollout
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_UNUSED_EXPLOSION_2 0x2 0x8 0x8 0x447F @;Reddish - Pink
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	waitforvisualfinish
 	launchtemplate Template_DigMound TEMPLATE_ATTACKER | 0x1, 0x3 0x0 0x0 0xb4
@@ -27087,7 +27087,7 @@ Move_MAX_QUAKE:
 	call DIRT_GEYSER
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x1 0xE 0xE 0x0 @;Black
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ATK 0x1 0xE 0x0 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ATK 0x1 0xE 0x0 0x0 @;Black
 	makebankvisible ANIM_ATTACKER
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
@@ -27176,7 +27176,7 @@ Move_MAX_DARKNESS:
 	launchtemplate DARKNESS_HOLE TEMPLATE_ATTACKER | 2, 0x5, ANIM_ATTACKER, -20, 0, 145, 0
 	launchtemplate DARKNESS_HOLE TEMPLATE_ATTACKER | 2, 0x5, ANIM_ATTACKER, 20, 0, 145, 0
 	delay 0x48
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0xE 0x0 @;Black
 	call DARKNESS_ORB_LAUNCH_PINK
 	call DARKNESS_ORB_LAUNCH_PURPLE
 	call DARKNESS_ORB_LAUNCH_PINK
@@ -27201,7 +27201,7 @@ Move_MAX_DARKNESS:
 	call DARKNESS_CLOUD_EXPLOSION
 	call DARKNESS_CLOUD_EXPLOSION
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x0 @;From black
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x40c0 @;From purple
 	waitforvisualfinish
 	end
@@ -27247,7 +27247,7 @@ Move_MAX_OVERGROWTH:
 	loadspritegfx ANIM_TAG_UNUSED_EXPLOSION_2
 	loadspritegfx ANIM_TAG_LEAF
 	loadspritegfx ANIM_TAG_SPORE
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	call OVERGROWTH_SEEDS_UP
 	waitforvisualfinish
@@ -27260,7 +27260,7 @@ Move_MAX_OVERGROWTH:
 	call LEAVES_COTTON_EXPLOSION_GEYSER
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x33F2 @;Light Green
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;Black
 	waitforvisualfinish
 	end
 
@@ -27380,7 +27380,7 @@ Move_MAX_STEELSPIKE:
 	loadspritegfx ANIM_TAG_LARGE_SPIKE
 
 Move_MAX_STEELSPIKE_BEGIN:
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	waitforvisualfinish
 	launchtask AnimTask_MaxSteelspike 0x2 0x0
@@ -27388,7 +27388,7 @@ Move_MAX_STEELSPIKE_BEGIN:
 	playsewithpan SE_M_MEGA_KICK2 SOUND_PAN_TARGET
 	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_TARGET 0x8 0x0 20 0x1
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;Black
 	end
 
 .align 2
@@ -27410,7 +27410,7 @@ Move_G_MAX_WILDFIRE_MOVE:
 	monbg ANIM_TARGET
 	splitbgprio ANIM_TARGET
 	playsewithpan SE_M_MEGA_KICK SOUND_PAN_ATTACKER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_BIRD 0x0 0xF 0xF 0x057C @;Red
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_FLASH_CANNON_BALL 0x0 0xF 0xF 0x057C @;Red
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_SHARP_TEETH 0x0 0xF 0xF 0x01DD @;Orange
@@ -27441,7 +27441,7 @@ Move_G_MAX_WILDFIRE_MOVE:
 	call MAX_FLARE_GEYSER
 	call MAX_FLARE_GEYSER
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x0 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x0 0x0 @;Black
 	call UNSET_SCROLLING_BG
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
@@ -27469,7 +27469,7 @@ Move_G_MAX_GOLDRUSH:
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
 	loadspritegfx ANIM_TAG_UNUSED_EXPLOSION_2
 	loadspritegfx ANIM_TAG_COIN
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	call MAX_STRIKE_SCREEN_SHAKE
 	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_TARGET 0x0 0x4 0x34 0x1
@@ -27479,7 +27479,7 @@ Move_G_MAX_GOLDRUSH:
 	call EXPLOSION_COINS_GEYSER
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x73DF @;From bright yellow
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	waitforvisualfinish
 	end
 
@@ -27563,7 +27563,7 @@ Move_G_MAX_TERROR:
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_CHAIN_LINK 0x0 0xA 0xA 0x7CBF @;Pink
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_RAZOR_SHELL 0x0 0xA 0xA 0x7CBF @;Pink
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_VERTICAL_HEX 0x2 0xA 0xA 0x5C05 @;Royal Blue
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	launchtemplate PHANTASM_OBJ_1 TEMPLATE_ATTACKER | 2, 0x5, -30, -40,  30, -10, 40 @;Top left - Top Right
 	launchtemplate PHANTASM_OBJ_2 TEMPLATE_ATTACKER | 2, 0x5, -40, -10,   0, -30, 40 @;Middle left - Top
@@ -27591,7 +27591,7 @@ Move_G_MAX_TERROR:
 	launchtemplate 0x83FEEE4 0x2 0x0  
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	waitforvisualfinish
 	end
 
@@ -27601,7 +27601,7 @@ Move_G_MAX_TERROR:
 Move_G_MAX_RESONANCE:
 	loadspritegfx ANIM_TAG_ICE_ROCK
 	loadspritegfx ANIM_TAG_ICE_CRYSTALS
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	delay 0x2A
 	fadetobg BG_AURORA_BEAM
@@ -27631,7 +27631,7 @@ G_MAX_RESONANCE_REJOIN:
 	launchtemplate gSlideMonToOriginalPosSpriteTemplate 0x2 0x3 ANIM_TARGET 0x0 0x10
 	call UNSET_SCROLLING_BG
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0x0 0x0 @;Fix faded palettes
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0x0 0x0 @;Fix faded palettes
 	clearmonbg ANIM_DEF_PARTNER
 	end
 
@@ -27663,7 +27663,7 @@ Move_G_MAX_CUDDLE:
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
 	loadspritegfx ANIM_TAG_UNUSED_EXPLOSION_2
 	loadspritegfx ANIM_TAG_RED_HEART
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	call MAX_STRIKE_SCREEN_SHAKE
 	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_TARGET 0x0 0x4 0x34 0x1
@@ -27673,7 +27673,7 @@ Move_G_MAX_CUDDLE:
 	call EXPLOSION_HEART_GEYSER
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x73DF @;From bright yellow
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	waitforvisualfinish
 	end
 
@@ -27740,7 +27740,7 @@ Move_G_MAX_REPLENISH:
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
 	loadspritegfx ANIM_TAG_UNUSED_EXPLOSION_2
 	loadspritegfx ANIM_TAG_BERRY_NORMAL
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	call MAX_STRIKE_SCREEN_SHAKE
 	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_TARGET 0x0 0x4 0x34 0x1
@@ -27750,7 +27750,7 @@ Move_G_MAX_REPLENISH:
 	call EXPLOSION_BERRY_GEYSER
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x73DF @;From bright yellow
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	waitforvisualfinish
 	end
 
@@ -27918,7 +27918,7 @@ Move_G_MAX_DEPLETION:
 	delay 0x48
 	playsoundpanchange 0x7A SOUND_PAN_ATTACKER SOUND_PAN_TARGET 0x2 0x0
 	delay 0x10
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0xE 0x0 @;Black
 	playsewithpan SE_M_TWISTER SOUND_PAN_TARGET
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x4 0x48 0x1
 	delay 0xA
@@ -27936,7 +27936,7 @@ Move_G_MAX_DEPLETION:
 	call HURRICANE_GUST
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x1D @;From red
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	end
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -27968,7 +27968,7 @@ Move_G_MAX_SANDBLAST:
 	loadspritegfx ANIM_TAG_ROCKS @ rollout
 	loadspritegfx ANIM_TAG_UNUSED_EXPLOSION_2
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_UNUSED_EXPLOSION_2 0x2 0x8 0x8 0x447F @;Reddish - Pink
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	waitforvisualfinish
 	launchtemplate Template_DigMound TEMPLATE_ATTACKER | 0x1, 0x3 0x0 0x0 0xb4
@@ -28000,7 +28000,7 @@ Move_G_MAX_SANDBLAST:
 	call SANDTOMB_TRAP_PARTICLES
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x1 0xE 0xE 0x0 @;Black
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_ATK 0x1 0xE 0x0 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG | PAL_ATK 0x1 0xE 0x0 0x0 @;Black
 	makebankvisible ANIM_ATTACKER
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
@@ -28027,7 +28027,7 @@ Move_G_MAX_SNOOZE:
 	launchtemplate SNOOZE_HOLE TEMPLATE_ATTACKER | 2, 0x5, ANIM_ATTACKER, -20, 0, 145, 0
 	launchtemplate SNOOZE_HOLE TEMPLATE_ATTACKER | 2, 0x5, ANIM_ATTACKER, 20, 0, 145, 0
 	delay 0x48
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x0 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x0 0x0 0xE 0x0 @;Black
 	call DARKNESS_ORB_LAUNCH_PURPLE
 	call DARKNESS_ORB_LAUNCH_PURPLE
 	call DARKNESS_ORB_LAUNCH_PURPLE
@@ -28052,7 +28052,7 @@ Move_G_MAX_SNOOZE:
 	call DARKNESS_CLOUD_EXPLOSION
 	call DARKNESS_CLOUD_EXPLOSION
 	waitforvisualfinish
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x10 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x10 0x0 0x0 @;From black
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x40c0 @;From purple
 	waitforvisualfinish
 	end
@@ -28069,7 +28069,7 @@ Move_G_MAX_TARTNESS:
 	loadspritegfx ANIM_TAG_UNUSED_EXPLOSION_2
 	loadspritegfx ANIM_TAG_APPLE
 	loadspritegfx ANIM_TAG_LEAF
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	call OVERGROWTH_SEEDS_UP
 	waitforvisualfinish
@@ -28082,7 +28082,7 @@ Move_G_MAX_TARTNESS:
 	call LEAVES_APPLE_EXPLOSION_GEYSER
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x33F2 @;Light Green
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;Black
 	waitforvisualfinish
 	end
 
@@ -28173,7 +28173,7 @@ Move_G_MAX_SMITE:
 	loadspritegfx ANIM_TAG_LEER
 	loadspritegfx ANIM_TAG_SPARK
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_SPARK 0x0 0x10 0x10 0x7FAF @;Light blue
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	delay 0x20
 	call STARFALL_STAR_TWINKLE
@@ -28202,7 +28202,7 @@ Move_G_MAX_SMITE:
 	call SMITE_TARGET_BEAM_UP
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x7F0C @;Light blue
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	waitforvisualfinish
 	end
 
@@ -28274,7 +28274,7 @@ Move_G_MAX_VINE_LASH_MOVE:
 	loadspritegfx ANIM_TAG_UNUSED_EXPLOSION_2
 	launchtask AnimTask_BlendParticle 0xa 0x5 ANIM_TAG_LEER 0x0 0xC 0xC 0x1F @;Red
 	launchtask AnimTask_BlendParticle 0x5 0x5 ANIM_TAG_UNUSED_EXPLOSION_2 0x2 0x8 0x8 0x447F @;Reddish - Pink
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	delay 0x20
 	playsewithpan SE_M_DETECT SOUND_PAN_ATTACKER
@@ -28296,7 +28296,7 @@ Move_G_MAX_VINE_LASH_MOVE:
 	call EXPLOSION_GEYSER
 	waitforvisualfinish
 	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_DEF 0x1 0x10 0x0 0x54DF @;From Pink
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From Black
 	waitforvisualfinish
 	end
 
@@ -28318,7 +28318,7 @@ Move_G_MAX_CANNONADE_MOVE:
 	loadspritegfx ANIM_TAG_SMALL_BUBBLES
 	loadspritegfx ANIM_TAG_ICE_CRYSTALS
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xE 0x0 @;Black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0 @;Black
 	launchtask AnimTask_DynamaxGrowth 0x5 0x1 0x1
 	delay 0x5
 	playsewithpan SE_M_CRABHAMMER SOUND_PAN_ATTACKER
@@ -28379,7 +28379,7 @@ Move_G_MAX_CANNONADE_MOVE:
 	call MAX_GEYSER_EXPLOSION_BUBBLES
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xE 0x0 0x0 @;From black
+	launchtask AnimTask_pal_fade 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0 @;From black
 	waitforvisualfinish
 	end
 
